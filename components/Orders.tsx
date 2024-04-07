@@ -102,14 +102,17 @@ export function Orders() {
                     <TooltipTrigger asChild>
                       <Link
                         href={`/${menu.toLowerCase()}`}
-                        key={index}
                         className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
                       >
                         {menu === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu === "Orders" && (<ShoppingCart className="h-5 w-5" />)}
+                        {menu === "Orders" && (
+                          <ShoppingCart className="h-5 w-5" />
+                        )}
                         {menu === "Products" && <Package className="h-5 w-5" />}
                         {menu === "Customers" && <Users2 className="h-5 w-5" />}
-                        {menu === "Analytics" && (<LineChart className="h-5 w-5" />)}
+                        {menu === "Analytics" && (
+                          <LineChart className="h-5 w-5" />
+                        )}
                         <span className="sr-only">{menu}</span>
                       </Link>
                     </TooltipTrigger>
@@ -158,17 +161,27 @@ export function Orders() {
 
                 {menu2.map((menu2: string, index: number) => {
                   return (
-                    <div>
+                    <div key={index}>
                       <Link
                         href={`/${menu2.toLowerCase()}`}
-                        key={index}
-                        className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground">
+                        className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                      >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu2 === "Orders" && (<ShoppingCart className="h-5 w-5" />)}
-                        {menu2 === "Products" && <Package className="h-5 w-5" />}
-                        {menu2 === "Customers" && <Users2 className="h-5 w-5" />}
-                        {menu2 === "Analytics" && (<LineChart className="h-5 w-5" />)}
-                        {menu2 === "Settings" && (<Settings className="h-5 w-5" />)}
+                        {menu2 === "Orders" && (
+                          <ShoppingCart className="h-5 w-5" />
+                        )}
+                        {menu2 === "Products" && (
+                          <Package className="h-5 w-5" />
+                        )}
+                        {menu2 === "Customers" && (
+                          <Users2 className="h-5 w-5" />
+                        )}
+                        {menu2 === "Analytics" && (
+                          <LineChart className="h-5 w-5" />
+                        )}
+                        {menu2 === "Settings" && (
+                          <Settings className="h-5 w-5" />
+                        )}
                         {menu2}
                       </Link>
                     </div>
