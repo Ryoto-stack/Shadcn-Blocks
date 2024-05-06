@@ -1,30 +1,31 @@
-import Link from "next/link"
+import Link from "next/link";
 import {
   Activity,
   ArrowUpRight,
+  Barcode,
   CircleUser,
   CreditCard,
   DollarSign,
+  Droplets,
+  Inbox,
+  Keyboard,
   Menu,
   Package2,
+  Save,
   Search,
   Users,
-} from "lucide-react"
+} from "lucide-react";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,9 +33,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Table,
   TableBody,
@@ -42,7 +43,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 export function Dashboard() {
   return (
@@ -66,25 +67,25 @@ export function Dashboard() {
             href="/orders"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Orders
+            Activity
           </Link>
           <Link
             href="/products"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Products
+            Assets
           </Link>
           <Link
             href="#"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Customers
+            Users
           </Link>
           <Link
             href="/settings"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Analytics
+            Settings
           </Link>
         </nav>
         <Sheet>
@@ -143,7 +144,7 @@ export function Dashboard() {
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Search products..."
+                placeholder="Lookup assets"
                 className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
               />
             </div>
@@ -161,75 +162,95 @@ export function Dashboard() {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem><a href="/">Logout</a></DropdownMenuItem>
+              <DropdownMenuItem>
+                <a href="/">Logout</a>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
       </header>
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
-        <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+        <div className="grid gap-1 md:grid-cols-2 md:gap-4 lg:grid-cols-6">
           <Card x-chunk="dashboard-01-chunk-0">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Total Revenue
-              </CardTitle>
-              <DollarSign className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium">Assets</CardTitle>
+              <Barcode className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">$45,231.89</div>
-              <p className="text-xs text-muted-foreground">
-                +20.1% from last month
-              </p>
+              <div className="text-2xl font-bold">12</div>
+              <Button variant="link" className="text-xs">
+                View All
+              </Button>
             </CardContent>
           </Card>
           <Card x-chunk="dashboard-01-chunk-1">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Subscriptions
-              </CardTitle>
-              <Users className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium">Licenses</CardTitle>
+              <Save className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">+2350</div>
-              <p className="text-xs text-muted-foreground">
-                +180.1% from last month
-              </p>
+              <div className="text-2xl font-bold">34</div>
+              <Button variant="link" className="text-xs">
+                View All
+              </Button>
             </CardContent>
           </Card>
           <Card x-chunk="dashboard-01-chunk-2">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Sales</CardTitle>
-              <CreditCard className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium">Accessories</CardTitle>
+              <Keyboard className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">+12,234</div>
-              <p className="text-xs text-muted-foreground">
-                +19% from last month
-              </p>
+              <div className="text-2xl font-bold">56</div>
+              <Button variant="link" className="text-xs">
+                View All
+              </Button>
             </CardContent>
           </Card>
           <Card x-chunk="dashboard-01-chunk-3">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Active Now</CardTitle>
-              <Activity className="h-4 w-4 text-muted-foreground" />
+              <CardTitle className="text-sm font-medium">Consumables</CardTitle>
+              <Droplets className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">+573</div>
-              <p className="text-xs text-muted-foreground">
-                +201 since last hour
-              </p>
+              <div className="text-2xl font-bold">78</div>
+              <Button variant="link" className="text-xs">
+                View All
+              </Button>
+            </CardContent>
+          </Card>
+          <Card x-chunk="dashboard-01-chunk-3">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Component</CardTitle>
+              <Inbox className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">90</div>
+              <Button variant="link" className="text-xs">
+                View All
+              </Button>
+            </CardContent>
+          </Card>
+          <Card x-chunk="dashboard-01-chunk-3">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Users</CardTitle>
+              <Users className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">123</div>
+              <Button variant="link" className="text-xs">
+                View All
+              </Button>
             </CardContent>
           </Card>
         </div>
         <div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
-          <Card
-            className="xl:col-span-2" x-chunk="dashboard-01-chunk-4"
-          >
+          <Card className="xl:col-span-2" x-chunk="dashboard-01-chunk-4">
             <CardHeader className="flex flex-row items-center">
               <div className="grid gap-2">
-                <CardTitle>Transactions</CardTitle>
+                <CardTitle>Activity</CardTitle>
                 <CardDescription>
-                  Recent transactions from your store.
+                  Recent Activity from your Inventory
                 </CardDescription>
               </div>
               <Button asChild size="sm" className="ml-auto gap-1">
@@ -243,119 +264,104 @@ export function Dashboard() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Customer</TableHead>
-                    <TableHead className="hidden xl:table-column">
+                    <TableHead>User</TableHead>
+                    <TableHead>
                       Type
                     </TableHead>
-                    <TableHead className="hidden xl:table-column">
+                    <TableHead>
                       Status
                     </TableHead>
-                    <TableHead className="hidden xl:table-column">
-                      Date
+                    <TableHead>
+                      Item
                     </TableHead>
-                    <TableHead className="text-right">Amount</TableHead>
+                    <TableHead className="text-right">Date</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   <TableRow>
                     <TableCell>
-                      <div className="font-medium">Liam Johnson</div>
-                      <div className="hidden text-sm text-muted-foreground md:inline">
-                        liam@example.com
-                      </div>
+                      <div className="font-medium">Kent Escala</div>
                     </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      Sale
+                    <TableCell>
+                      Asset
                     </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      <Badge className="text-xs" variant="outline">
+                    <TableCell>
+                      <Badge variant="secondary" className="text-xs">
                         Approved
                       </Badge>
                     </TableCell>
-                    <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
-                      2023-06-23
+                    <TableCell>
+                      Laptop
                     </TableCell>
-                    <TableCell className="text-right">$250.00</TableCell>
+                    <TableCell className="text-right">06/05/2024</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <div className="font-medium">Olivia Smith</div>
-                      <div className="hidden text-sm text-muted-foreground md:inline">
-                        olivia@example.com
-                      </div>
+                      <div className="font-medium">Orville Montero</div>
                     </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      Refund
+                    <TableCell>
+                      License
                     </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      <Badge className="text-xs" variant="outline">
+                    <TableCell>
+                      <Badge className="text-xs" variant="destructive">
                         Declined
                       </Badge>
                     </TableCell>
-                    <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
-                      2023-06-24
+                    <TableCell>
+                      Software
                     </TableCell>
-                    <TableCell className="text-right">$150.00</TableCell>
+                    <TableCell className="text-right">05/05/2024</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <div className="font-medium">Noah Williams</div>
-                      <div className="hidden text-sm text-muted-foreground md:inline">
-                        noah@example.com
-                      </div>
+                      <div className="font-medium">Mecca Dagami</div>
                     </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      Subscription
+                    <TableCell>
+                      Asset
                     </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      <Badge className="text-xs" variant="outline">
-                        Approved
+                    <TableCell>
+                      <Badge className="text-xs" variant="destructive">
+                        STOLEN
                       </Badge>
                     </TableCell>
-                    <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
-                      2023-06-25
+                    <TableCell>
+                      PC
                     </TableCell>
-                    <TableCell className="text-right">$350.00</TableCell>
+                    <TableCell className="text-right">04/05/2024</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <div className="font-medium">Emma Brown</div>
-                      <div className="hidden text-sm text-muted-foreground md:inline">
-                        emma@example.com
-                      </div>
+                      <div className="font-medium">Justin Tuazon</div>
                     </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      Sale
+                    <TableCell>
+                      Consumables
                     </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      <Badge className="text-xs" variant="outline">
-                        Approved
+                    <TableCell>
+                      <Badge className="text-xs" variant="secondary">
+                        Sleeping
                       </Badge>
                     </TableCell>
-                    <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
-                      2023-06-26
+                    <TableCell>
+                      Fantasy
                     </TableCell>
-                    <TableCell className="text-right">$450.00</TableCell>
+                    <TableCell className="text-right">24/7</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
-                      <div className="font-medium">Liam Johnson</div>
-                      <div className="hidden text-sm text-muted-foreground md:inline">
-                        liam@example.com
-                      </div>
+                      <div className="font-medium">Micah Avance</div>
                     </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      Sale
+                    <TableCell>
+                      Accessory
                     </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      <Badge className="text-xs" variant="outline">
-                        Approved
+                    <TableCell>
+                      <Badge className="text-xs" variant="destructive">
+                        NANG HAHAMPAS
                       </Badge>
                     </TableCell>
-                    <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
-                      2023-06-27
+                    <TableCell>
+                      Kamay
                     </TableCell>
-                    <TableCell className="text-right">$550.00</TableCell>
+                    <TableCell className="text-right">Every Day</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
@@ -363,88 +369,53 @@ export function Dashboard() {
           </Card>
           <Card x-chunk="dashboard-01-chunk-5">
             <CardHeader>
-              <CardTitle>Recent Sales</CardTitle>
+              <CardTitle>Asset By Status</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-8">
-              <div className="flex items-center gap-4">
-                <Avatar className="hidden h-9 w-9 sm:flex">
-                  <AvatarImage src="/avatars/01.png" alt="Avatar" />
-                  <AvatarFallback>OM</AvatarFallback>
-                </Avatar>
+              <div className="flex items-center gap-2">
                 <div className="grid gap-1">
-                  <p className="text-sm font-medium leading-none">
-                    Olivia Martin
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    olivia.martin@email.com
+                  <p className="text-sm font-extrabold leading-none">
+                    Deployed
                   </p>
                 </div>
-                <div className="ml-auto font-medium">+$1,999.00</div>
+                <div className="ml-auto font-extrabold">35</div>
               </div>
               <div className="flex items-center gap-4">
-                <Avatar className="hidden h-9 w-9 sm:flex">
-                  <AvatarImage src="/avatars/02.png" alt="Avatar" />
-                  <AvatarFallback>JL</AvatarFallback>
-                </Avatar>
                 <div className="grid gap-1">
-                  <p className="text-sm font-medium leading-none">
-                    Jackson Lee
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    jackson.lee@email.com
+                  <p className="text-sm font-extrabold leading-none">
+                    Pending
                   </p>
                 </div>
-                <div className="ml-auto font-medium">+$39.00</div>
+                <div className="ml-auto font-extrabold">80</div>
               </div>
               <div className="flex items-center gap-4">
-                <Avatar className="hidden h-9 w-9 sm:flex">
-                  <AvatarImage src="/avatars/03.png" alt="Avatar" />
-                  <AvatarFallback>IN</AvatarFallback>
-                </Avatar>
                 <div className="grid gap-1">
-                  <p className="text-sm font-medium leading-none">
-                    Isabella Nguyen
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    isabella.nguyen@email.com
+                  <p className="text-sm font-extrabold leading-none">
+                    Undeployable
                   </p>
                 </div>
-                <div className="ml-auto font-medium">+$299.00</div>
+                <div className="ml-auto font-extrabold">56</div>
               </div>
               <div className="flex items-center gap-4">
-                <Avatar className="hidden h-9 w-9 sm:flex">
-                  <AvatarImage src="/avatars/04.png" alt="Avatar" />
-                  <AvatarFallback>WK</AvatarFallback>
-                </Avatar>
                 <div className="grid gap-1">
-                  <p className="text-sm font-medium leading-none">
-                    William Kim
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    will@email.com
+                  <p className="text-sm font-extrabold leading-none">
+                    Requestable
                   </p>
                 </div>
-                <div className="ml-auto font-medium">+$99.00</div>
+                <div className="ml-auto font-extrabold">16</div>
               </div>
               <div className="flex items-center gap-4">
-                <Avatar className="hidden h-9 w-9 sm:flex">
-                  <AvatarImage src="/avatars/05.png" alt="Avatar" />
-                  <AvatarFallback>SD</AvatarFallback>
-                </Avatar>
                 <div className="grid gap-1">
-                  <p className="text-sm font-medium leading-none">
-                    Sofia Davis
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    sofia.davis@email.com
+                  <p className="text-sm font-extrabold leading-none">
+                    Due for Audit
                   </p>
                 </div>
-                <div className="ml-auto font-medium">+$39.00</div>
+                <div className="ml-auto font-extrabold">79</div>
               </div>
             </CardContent>
           </Card>
         </div>
       </main>
     </div>
-  )
+  );
 }
