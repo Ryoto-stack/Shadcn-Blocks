@@ -248,14 +248,14 @@ export function Orders() {
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
               <Card className="sm:col-span-2" x-chunk="dashboard-05-chunk-0">
                 <CardHeader className="pb-3">
-                  <CardTitle>Your Orders</CardTitle>
+                  <CardTitle>Your Activity</CardTitle>
                   <CardDescription className="max-w-lg text-balance leading-relaxed">
                     Introducing Our Dynamic Orders Dashboard for Seamless
                     Management and Insightful Analysis.
                   </CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  <Button>Create New Order</Button>
+                  <Button className="px-2 py-3"> <link href="#" /> Create New Order</Button>
                 </CardFooter>
               </Card>
               <Card x-chunk="dashboard-05-chunk-1">
@@ -310,13 +310,10 @@ export function Orders() {
                       <DropdownMenuLabel>Filter by</DropdownMenuLabel>
                       <DropdownMenuSeparator />
                       <DropdownMenuCheckboxItem checked>
-                        Fulfilled
+                        Approved
                       </DropdownMenuCheckboxItem>
                       <DropdownMenuCheckboxItem>
                         Declined
-                      </DropdownMenuCheckboxItem>
-                      <DropdownMenuCheckboxItem>
-                        Refunded
                       </DropdownMenuCheckboxItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -335,7 +332,7 @@ export function Orders() {
                   <CardHeader className="px-7">
                     <CardTitle>Orders</CardTitle>
                     <CardDescription>
-                      Recent orders from your store.
+                      Recent Activity from your Inventory
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -359,16 +356,13 @@ export function Orders() {
                         <TableRow className="bg-accent">
                           <TableCell>
                             <div className="font-medium">Liam Johnson</div>
-                            <div className="hidden text-sm text-muted-foreground md:inline">
-                              liam@example.com
-                            </div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            Sale
+                            Assets
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
                             <Badge className="text-xs" variant="secondary">
-                              Fulfilled
+                              Approved
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
@@ -379,15 +373,12 @@ export function Orders() {
                         <TableRow>
                           <TableCell>
                             <div className="font-medium">Olivia Smith</div>
-                            <div className="hidden text-sm text-muted-foreground md:inline">
-                              olivia@example.com
-                            </div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            Refund
+                            Accessories
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            <Badge className="text-xs" variant="outline">
+                            <Badge className="text-xs" variant="destructive">
                               Declined
                             </Badge>
                           </TableCell>
@@ -399,16 +390,13 @@ export function Orders() {
                         <TableRow>
                           <TableCell>
                             <div className="font-medium">Noah Williams</div>
-                            <div className="hidden text-sm text-muted-foreground md:inline">
-                              noah@example.com
-                            </div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            Subscription
+                            Assets
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
                             <Badge className="text-xs" variant="secondary">
-                              Fulfilled
+                              Approved
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
@@ -419,16 +407,13 @@ export function Orders() {
                         <TableRow>
                           <TableCell>
                             <div className="font-medium">Emma Brown</div>
-                            <div className="hidden text-sm text-muted-foreground md:inline">
-                              emma@example.com
-                            </div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            Sale
+                            Assets
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
                             <Badge className="text-xs" variant="secondary">
-                              Fulfilled
+                              Approved
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
@@ -439,16 +424,13 @@ export function Orders() {
                         <TableRow>
                           <TableCell>
                             <div className="font-medium">Liam Johnson</div>
-                            <div className="hidden text-sm text-muted-foreground md:inline">
-                              liam@example.com
-                            </div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            Sale
+                            Licence
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
                             <Badge className="text-xs" variant="secondary">
-                              Fulfilled
+                              Approved
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
@@ -459,16 +441,13 @@ export function Orders() {
                         <TableRow>
                           <TableCell>
                             <div className="font-medium">Liam Johnson</div>
-                            <div className="hidden text-sm text-muted-foreground md:inline">
-                              liam@example.com
-                            </div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            Sale
+                            Component
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
                             <Badge className="text-xs" variant="secondary">
-                              Fulfilled
+                              Approved
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
@@ -479,15 +458,12 @@ export function Orders() {
                         <TableRow>
                           <TableCell>
                             <div className="font-medium">Olivia Smith</div>
-                            <div className="hidden text-sm text-muted-foreground md:inline">
-                              olivia@example.com
-                            </div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            Refund
+                            License
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            <Badge className="text-xs" variant="outline">
+                            <Badge className="text-xs" variant="destructive">
                               Declined
                             </Badge>
                           </TableCell>
@@ -499,16 +475,13 @@ export function Orders() {
                         <TableRow>
                           <TableCell>
                             <div className="font-medium">Emma Brown</div>
-                            <div className="hidden text-sm text-muted-foreground md:inline">
-                              emma@example.com
-                            </div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                            Sale
+                            Consumables
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
                             <Badge className="text-xs" variant="secondary">
-                              Fulfilled
+                              Approved
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
