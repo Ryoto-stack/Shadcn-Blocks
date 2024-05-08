@@ -73,12 +73,12 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 
-const menu = ["Dashboard", "Orders", "Products", "Customers", "Analytics"];
+const menu = ["Dashboard", "Orders", "Products", "Users", "Analytics"];
 const menu2 = [
   "Dashboard",
   "Orders",
   "Products",
-  "Customers",
+  "Users",
   "Analytics",
   "Settings",
 ];
@@ -109,7 +109,7 @@ export function Orders() {
                           <ShoppingCart className="h-5 w-5" />
                         )}
                         {menu === "Products" && <Package className="h-5 w-5" />}
-                        {menu === "Customers" && <Users2 className="h-5 w-5" />}
+                        {menu === "Users" && <Users2 className="h-5 w-5" />}
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}

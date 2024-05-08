@@ -56,7 +56,7 @@ export function Settings() {
             href="#"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Customers
+            Users
           </Link>
           <Link
             href="#"
@@ -107,7 +107,7 @@ export function Settings() {
                 href="#"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Customers
+                Users
               </Link>
               <Link href="#" className="hover:text-foreground">
                 Settings

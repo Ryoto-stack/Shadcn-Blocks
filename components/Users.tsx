@@ -71,13 +71,13 @@ const menu2 = [
   "Settings",
 ];
 
-export function Products() {
+export function Users() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
         <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
           <Link
-            href="#"
+            href=""
             className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
           >
             <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
@@ -163,7 +163,7 @@ export function Products() {
                         {menu2 === "Products" && (
                           <Package className="h-5 w-5" />
                         )}
-                        {menu2 === "Users" && (
+                        {menu2 === "Customers" && (
                           <Users2 className="h-5 w-5" />
                         )}
                         {menu2 === "Analytics" && (
@@ -236,14 +236,7 @@ export function Products() {
         <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
           <Tabs defaultValue="all">
             <div className="flex items-center">
-              <TabsList>
-                <TabsTrigger value="all">All</TabsTrigger>
-                <TabsTrigger value="active">Deployed</TabsTrigger>
-                <TabsTrigger value="draft">Spare</TabsTrigger>
-                <TabsTrigger value="archived" className="hidden sm:flex">
-                  Defective
-                </TabsTrigger>
-              </TabsList>
+              
               <div className="ml-auto flex items-center gap-2">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -285,9 +278,9 @@ export function Products() {
             <TabsContent value="all">
               <Card x-chunk="dashboard-06-chunk-0">
                 <CardHeader>
-                  <CardTitle>Assets</CardTitle>
+                  <CardTitle>Users</CardTitle>
                   <CardDescription>
-                    Manage your assets and view their status.
+                    Manage your users and view their information.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -297,11 +290,11 @@ export function Products() {
                         <TableHead className="hidden w-[100px] sm:table-cell">
                           <span className="sr-only">Image</span>
                         </TableHead>
-                        <TableHead>Added by</TableHead>
-                        <TableHead>Asset Name</TableHead>
-                        <TableHead>Status</TableHead>
+                        <TableHead>Name</TableHead>
+                        <TableHead>Email</TableHead>
+                        <TableHead>Username</TableHead>
                         <TableHead className="hidden md:table-cell">
-                          Serial
+                           
                         </TableHead>
                         <TableHead className="hidden md:table-cell">
                           Category
@@ -313,7 +306,7 @@ export function Products() {
                           <span className="sr-only">Actions</span>
                         </TableHead>
                       </TableRow>
-                    </TableHeader>
+                    </TableHeader>s
                     <TableBody>
                       <TableRow>
                         <TableCell className="hidden sm:table-cell">
@@ -329,10 +322,10 @@ export function Products() {
                           Mecca Denise Dagami
                         </TableCell>
                         <TableCell className="font-medium">
-                          Plantronics Headphones
+                          m.dagami@uas.ph
                         </TableCell>
-                        <TableCell>
-                          <Badge variant="outline">Deployed</Badge>
+                        <TableCell className="font-medium">
+                          Mecca
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           KGH123GHJ
@@ -377,7 +370,7 @@ export function Products() {
                           Orville Mon
                         </TableCell>
                         <TableCell className="font-medium">
-                          Plantronics Headphones
+                          o.mon@uas.ph
                         </TableCell>
                         <TableCell>
                           <Badge variant ="secondary">Spare</Badge>

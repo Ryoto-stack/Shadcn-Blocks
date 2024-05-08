@@ -76,7 +76,7 @@ export function Dashboard() {
             Assets
           </Link>
           <Link
-            href="#"
+            href="/users"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Users
@@ -118,16 +118,16 @@ export function Dashboard() {
                 Orders
               </Link>
               <Link
-                href="#"
+                href="/products"
                 className="text-muted-foreground hover:text-foreground"
               >
                 Products
               </Link>
               <Link
-                href="#"
+                href="/users"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Customers
+                Users
               </Link>
               <Link
                 href="#"
