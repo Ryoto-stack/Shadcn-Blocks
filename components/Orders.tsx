@@ -5,7 +5,11 @@ import {
   ChevronRight,
   Copy,
   CreditCard,
-  File,
+  ReceiptText,
+  Download,
+  CircleDotDashed,
+  CircleX,
+  CircleCheck,
   Home,
   LineChart,
   ListFilter,
@@ -15,7 +19,7 @@ import {
   PanelLeft,
   Search,
   Settings,
-  ShoppingCart,
+  SquareGanttChart,
   Truck,
   User2,
   Users2,
@@ -108,7 +112,7 @@ export function Orders() {
                       >
                         {menu === "Dashboard" && <Home className="h-5 w-5" />}
                         {menu === "Orders" && (
-                          <ShoppingCart className="h-5 w-5" />
+                          <SquareGanttChart className="h-5 w-5" />
                         )}
                         {menu === "Products" && <Package className="h-5 w-5" />}
                         {menu === "Users" && <Users2 className="h-5 w-5" />}
@@ -170,7 +174,7 @@ export function Orders() {
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
                         {menu2 === "Orders" && (
-                          <ShoppingCart className="h-5 w-5" />
+                          <SquareGanttChart className="h-5 w-5" />
                         )}
                         {menu2 === "Products" && (
                           <Package className="h-5 w-5" />
@@ -245,9 +249,9 @@ export function Orders() {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
-        <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3">
-          <div className="grid auto-rows-max items-start gap-4 md:gap-1 lg:col-span-3">
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+        <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-9">
+          <div className="grid auto-rows-max items-start gap-9 md:gap-1 lg:col-span-9">
+            <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-9 lg:grid-cols-6 xl:grid-cols-6">
               <Card className="sm:col-span-2" x-chunk="dashboard-05-chunk-0">
                 <CardHeader className="pb-3">
                   <CardTitle>Your Activity</CardTitle>
@@ -261,24 +265,46 @@ export function Orders() {
                 </CardFooter>
               </Card>
               <Card x-chunk="dashboard-05-chunk-1">
-                <CardHeader className="pb-2">
-                  <CardDescription>Approve</CardDescription>
-                  <CardTitle className="text-4xl">6</CardTitle>
+                <CardHeader className="pb-2 flex justify-center items-center">
+                  <CardDescription>Approve</CardDescription><CircleCheck className="h-5 w-5" />
+                  <CardTitle className="text-4xl flex justify-center items-center">6</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-xs text-muted-foreground">
+                  <div className="text-xs text-muted-foreground flex justify-center items-center">
                     Total of Approve
+                  </div>
+                </CardContent>
+              </Card>              
+              <Card x-chunk="dashboard-05-chunk-1">
+                <CardHeader className="pb-2 flex justify-center items-center">
+                  <CardDescription>Decline</CardDescription><CircleX className="h-5 w-5" />
+                  <CardTitle className="text-4xl">2</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-xs text-muted-foreground flex justify-center items-center">
+                    Total of Decline
+                  </div>
+                </CardContent>
+              </Card>
+              <Card x-chunk="dashboard-05-chunk-1">
+                <CardHeader className="pb-2 flex justify-center items-center">
+                  <CardDescription>Pending</CardDescription><CircleDotDashed className="h-5 w-5" />
+                  <CardTitle className="text-4xl">0</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-xs text-muted-foreground flex justify-center items-center">
+                    Total of Pending
                   </div>
                 </CardContent>
               </Card>
               <Card x-chunk="dashboard-05-chunk-2">
-                <CardHeader className="pb-2">
-                  <CardDescription>Decline</CardDescription>
-                  <CardTitle className="text-4xl">2</CardTitle>
+                <CardHeader className="pb-2 flex justify-center items-center">
+                  <CardDescription>Total activity</CardDescription><ReceiptText className="h-5 w-5" />
+                  <CardTitle className="text-4xl ">8</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-xs text-muted-foreground">
-                    Total of Decline
+                  <div className="text-xs text-muted-foreground flex justify-center items-center">
+                    Total of Activity 
                   </div>
                 </CardContent>
               </Card>
@@ -320,7 +346,7 @@ export function Orders() {
                     variant="outline"
                     className="h-7 gap-1 text-sm"
                   >
-                    <File className="h-3.5 w-3.5" />
+                    <Download className="h-3.5 w-3.5" />
                     <span className="sr-only sm:not-sr-only">Export</span>
                   </Button>
                 </div>
