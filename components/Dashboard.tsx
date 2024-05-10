@@ -46,7 +46,18 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import Barchart from '@/app/component/index'
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
+
+
+import Barchart from "@/app/component/index";
 
 export function Dashboard() {
   return (
@@ -90,6 +101,28 @@ export function Dashboard() {
           >
             Settings
           </Link>
+          <Menubar>
+            <MenubarMenu>
+              <MenubarTrigger>Create New</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>
+                  Assets
+                </MenubarItem>
+                <MenubarItem>
+                  License
+                </MenubarItem>
+                <MenubarItem>
+                  Accessories
+                </MenubarItem>
+                <MenubarItem>
+                  Consumables
+                </MenubarItem>
+                <MenubarItem>
+                  Component
+                </MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+          </Menubar>
         </nav>
         <Sheet>
           <SheetTrigger asChild>
@@ -268,15 +301,9 @@ export function Dashboard() {
                 <TableHeader>
                   <TableRow>
                     <TableHead>User</TableHead>
-                    <TableHead>
-                      Type
-                    </TableHead>
-                    <TableHead>
-                      Status
-                    </TableHead>
-                    <TableHead>
-                      Item
-                    </TableHead>
+                    <TableHead>Type</TableHead>
+                    <TableHead>Status</TableHead>
+                    <TableHead>Item</TableHead>
                     <TableHead className="text-right">Date</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -285,85 +312,65 @@ export function Dashboard() {
                     <TableCell>
                       <div className="font-medium">Kent Escala</div>
                     </TableCell>
-                    <TableCell>
-                      Asset
-                    </TableCell>
+                    <TableCell>Asset</TableCell>
                     <TableCell>
                       <Badge variant="secondary" className="text-xs">
                         Approved
                       </Badge>
                     </TableCell>
-                    <TableCell>
-                      Laptop
-                    </TableCell>
+                    <TableCell>Laptop</TableCell>
                     <TableCell className="text-right">06/05/2024</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
                       <div className="font-medium">Orville Montero</div>
                     </TableCell>
-                    <TableCell>
-                      License
-                    </TableCell>
+                    <TableCell>License</TableCell>
                     <TableCell>
                       <Badge className="text-xs" variant="destructive">
                         Declined
                       </Badge>
                     </TableCell>
-                    <TableCell>
-                      Software
-                    </TableCell>
+                    <TableCell>Software</TableCell>
                     <TableCell className="text-right">05/05/2024</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
                       <div className="font-medium">Mecca Dagami</div>
                     </TableCell>
-                    <TableCell>
-                      Asset
-                    </TableCell>
+                    <TableCell>Asset</TableCell>
                     <TableCell>
                       <Badge className="text-xs" variant="destructive">
                         Declined
                       </Badge>
                     </TableCell>
-                    <TableCell>
-                      PC
-                    </TableCell>
+                    <TableCell>PC</TableCell>
                     <TableCell className="text-right">04/05/2024</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
                       <div className="font-medium">Justin Tuazon</div>
                     </TableCell>
-                    <TableCell>
-                      Consumables
-                    </TableCell>
+                    <TableCell>Consumables</TableCell>
                     <TableCell>
                       <Badge className="text-xs" variant="secondary">
                         Approved
                       </Badge>
                     </TableCell>
-                    <TableCell>
-                      Licenses
-                    </TableCell>
+                    <TableCell>Licenses</TableCell>
                     <TableCell className="text-right">03/05/2024</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
                       <div className="font-medium">Micah Avance</div>
                     </TableCell>
-                    <TableCell>
-                      Accessory
-                    </TableCell>
+                    <TableCell>Accessory</TableCell>
                     <TableCell>
                       <Badge className="text-xs" variant="destructive">
                         Declined
                       </Badge>
                     </TableCell>
-                    <TableCell>
-                      Keyboard
-                    </TableCell>
+                    <TableCell>Keyboard</TableCell>
                     <TableCell className="text-right">02/05/2024</TableCell>
                   </TableRow>
                 </TableBody>
@@ -375,7 +382,7 @@ export function Dashboard() {
               <CardTitle>Asset By Status</CardTitle>
             </CardHeader>
             <CardContent>
-              <Barchart/>
+              <Barchart />
             </CardContent>
           </Card>
         </div>
