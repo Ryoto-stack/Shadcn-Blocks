@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   Activity,
   ArrowUpRight,
+  BarChart,
   Barcode,
   CircleUser,
   CreditCard,
@@ -44,6 +45,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+
+import Barchart from '@/app/component/index'
 
 export function Dashboard() {
   return (
@@ -321,7 +324,7 @@ export function Dashboard() {
                     </TableCell>
                     <TableCell>
                       <Badge className="text-xs" variant="destructive">
-                        STOLEN
+                        Declined
                       </Badge>
                     </TableCell>
                     <TableCell>
@@ -338,13 +341,13 @@ export function Dashboard() {
                     </TableCell>
                     <TableCell>
                       <Badge className="text-xs" variant="secondary">
-                        Sleeping
+                        Approved
                       </Badge>
                     </TableCell>
                     <TableCell>
-                      Fantasy
+                      Licenses
                     </TableCell>
-                    <TableCell className="text-right">24/7</TableCell>
+                    <TableCell className="text-right">03/05/2024</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
@@ -355,13 +358,13 @@ export function Dashboard() {
                     </TableCell>
                     <TableCell>
                       <Badge className="text-xs" variant="destructive">
-                        NANG HAHAMPAS
+                        Declined
                       </Badge>
                     </TableCell>
                     <TableCell>
-                      Kamay
+                      Keyboard
                     </TableCell>
-                    <TableCell className="text-right">Every Day</TableCell>
+                    <TableCell className="text-right">02/05/2024</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
@@ -371,47 +374,8 @@ export function Dashboard() {
             <CardHeader>
               <CardTitle>Asset By Status</CardTitle>
             </CardHeader>
-            <CardContent className="grid gap-8">
-              <div className="flex items-center gap-2">
-                <div className="grid gap-1">
-                  <p className="text-sm font-extrabold leading-none">
-                    Deployed
-                  </p>
-                </div>
-                <div className="ml-auto font-extrabold">35</div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="grid gap-1">
-                  <p className="text-sm font-extrabold leading-none">
-                    Pending
-                  </p>
-                </div>
-                <div className="ml-auto font-extrabold">80</div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="grid gap-1">
-                  <p className="text-sm font-extrabold leading-none">
-                    Undeployable
-                  </p>
-                </div>
-                <div className="ml-auto font-extrabold">56</div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="grid gap-1">
-                  <p className="text-sm font-extrabold leading-none">
-                    Requestable
-                  </p>
-                </div>
-                <div className="ml-auto font-extrabold">16</div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="grid gap-1">
-                  <p className="text-sm font-extrabold leading-none">
-                    Due for Audit
-                  </p>
-                </div>
-                <div className="ml-auto font-extrabold">79</div>
-              </div>
+            <CardContent>
+              <Barchart/>
             </CardContent>
           </Card>
         </div>
