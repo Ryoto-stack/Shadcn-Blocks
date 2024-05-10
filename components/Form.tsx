@@ -45,10 +45,10 @@ export function LoginForm() {
             <Label htmlFor="password">Password</Label>
             <Input id="password" type="password" />
           </div>
-          <a href="/dashboard"><Button type="submit" className="w-full">
+          <a href="/dashboard"><Button type="submit" className="w-full py-2">
             Create an account
           </Button></a>
-          <Button variant="outline" className="w-full">
+          <Button variant="outline" className="w-full py-2">
             Sign up with GitHub
           </Button>
         </div>

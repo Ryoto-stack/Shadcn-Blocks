@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import styles from './Barchart.module.css'
 
-import { Bar } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -12,7 +12,9 @@ import {
     Title,
     Tooltip,
     Legend,
-    plugins
+    plugins,
+    ArcElement,
+    
 } from 'chart.js'
 
 ChartJS.register(

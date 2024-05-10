@@ -1,4 +1,5 @@
 .container {
-    width: 400px;
-    height: 400px;
+    width: full;
+    height: full;
+    margin-top: 50px;
 }
