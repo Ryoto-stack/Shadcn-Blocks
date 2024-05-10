@@ -294,11 +294,8 @@ export function Products() {
                   <Table>
                     <TableHeader>
                       <TableRow>
-                        <TableHead className="hidden w-[100px] sm:table-cell">
-                          <span className="sr-only">Image</span>
-                        </TableHead>
                         <TableHead>Added by</TableHead>
-                        <TableHead>Asset Name</TableHead>
+                        <TableHead>Model</TableHead>
                         <TableHead>Status</TableHead>
                         <TableHead className="hidden md:table-cell">
                           Serial
@@ -316,15 +313,6 @@ export function Products() {
                     </TableHeader>
                     <TableBody>
                       <TableRow>
-                        <TableCell className="hidden sm:table-cell">
-                          <Image
-                            alt="Product image"
-                            className="aspect-square rounded-md object-cover"
-                            height="64"
-                            src="/cat.png"
-                            width="64"
-                          />
-                        </TableCell>
                         <TableCell className="font-medium">
                           Mecca Denise Dagami
                         </TableCell>
@@ -364,15 +352,6 @@ export function Products() {
                         </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="hidden sm:table-cell">
-                          <Image
-                            alt="Product image"
-                            className="aspect-square rounded-md object-cover"
-                            height="64"
-                            src="/cat.png"
-                            width="64"
-                          />
-                        </TableCell>
                         <TableCell className="font-medium">
                           Orville Mon
                         </TableCell>
@@ -412,15 +391,7 @@ export function Products() {
                         </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="hidden sm:table-cell">
-                          <Image
-                            alt="Product image"
-                            className="aspect-square rounded-md object-cover"
-                            height="64"
-                            src="/cat.png"
-                            width="64"
-                          />
-                        </TableCell>
+
                         <TableCell className="font-medium">
                           Kile Santiago
                         </TableCell>
@@ -460,15 +431,7 @@ export function Products() {
                         </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="hidden sm:table-cell">
-                          <Image
-                            alt="Product image"
-                            className="aspect-square rounded-md object-cover"
-                            height="64"
-                            src="/cat.png"
-                            width="64"
-                          />
-                        </TableCell>
+
                         <TableCell className="font-medium">
                           Kent Escala
                         </TableCell>
@@ -508,15 +471,7 @@ export function Products() {
                         </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="hidden sm:table-cell">
-                          <Image
-                            alt="Product image"
-                            className="aspect-square rounded-md object-cover"
-                            height="64"
-                            src="/cat.png"
-                            width="64"
-                          />
-                        </TableCell>
+
                         <TableCell className="font-medium">
                           Ask Ketchum
                         </TableCell>
@@ -556,15 +511,6 @@ export function Products() {
                         </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="hidden sm:table-cell">
-                          <Image
-                            alt="Product image"
-                            className="aspect-square rounded-md object-cover"
-                            height="64"
-                            src="/cat.png"
-                            width="64"
-                          />
-                        </TableCell>
                         <TableCell className="font-medium">
                           Coco Martin
                         </TableCell>

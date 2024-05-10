@@ -190,12 +190,12 @@ export function Users() {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href="#">Products</Link>
+                  <Link href="#">Users</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator />
+              <BreadcrumbSeparator/>
               <BreadcrumbItem>
-                <BreadcrumbPage>All Assets</BreadcrumbPage>
+                <BreadcrumbPage>All Users</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -249,14 +249,14 @@ export function Users() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuLabel>Filter by</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuCheckboxItem checked>
-                      Deployed
-                    </DropdownMenuCheckboxItem>
-                    <DropdownMenuCheckboxItem>Spare</DropdownMenuCheckboxItem>
-                    <DropdownMenuCheckboxItem>
-                      Defective
-                    </DropdownMenuCheckboxItem>
+                    <DropdownMenuSeparator/>    
+                    <Badge variant ="default">Position</Badge>
+                          <DropdownMenuCheckboxItem>IT Support</DropdownMenuCheckboxItem>
+                          <DropdownMenuCheckboxItem>IT Asset Manager</DropdownMenuCheckboxItem>
+                          <DropdownMenuCheckboxItem>Intern</DropdownMenuCheckboxItem>
+                    <Badge variant ="default">Branch</Badge>
+                          <DropdownMenuCheckboxItem>Pampanga</DropdownMenuCheckboxItem>
+                          <DropdownMenuCheckboxItem>Pasig</DropdownMenuCheckboxItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
                 <Button size="sm" variant="outline" className="h-8 gap-1">
@@ -265,14 +265,6 @@ export function Users() {
                     Export
                   </span>
                 </Button>
-                <Link href="/editproduct">
-                
-                <Button size="sm" className="h-8 gap-1">
-                  <PlusCircle className="h-3.5 w-3.5" />
-                  <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                    Add Asset
-                  </span>
-                </Button></Link>
               </div>
             </div>
             <TabsContent value="all">
@@ -293,20 +285,14 @@ export function Users() {
                         <TableHead>Name</TableHead>
                         <TableHead>Email</TableHead>
                         <TableHead>Username</TableHead>
-                        <TableHead className="hidden md:table-cell">
-                           
-                        </TableHead>
-                        <TableHead className="hidden md:table-cell">
-                          Category
-                        </TableHead>
-                        <TableHead className="hidden md:table-cell">
-                          Created at
-                        </TableHead>
+                        <TableHead>Position</TableHead>
+                        <TableHead>Branch</TableHead>
+                        <TableHead>Created at</TableHead>
                         <TableHead>
                           <span className="sr-only">Actions</span>
                         </TableHead>
                       </TableRow>
-                    </TableHeader>s
+                    </TableHeader>
                     <TableBody>
                       <TableRow>
                         <TableCell className="hidden sm:table-cell">
@@ -328,32 +314,13 @@ export function Users() {
                           Mecca
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                          KGH123GHJ
+                          Intern
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                          Headphones
+                          Pampanga
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           2023-07-12 10:42 AM
-                        </TableCell>
-                        <TableCell>
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button
-                                aria-haspopup="true"
-                                size="icon"
-                                variant="ghost"
-                              >
-                                <MoreHorizontal className="h-4 w-4" />
-                                <span className="sr-only">Toggle menu</span>
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                              <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                              <DropdownMenuItem>Edit</DropdownMenuItem>
-                              <DropdownMenuItem>Delete</DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -372,36 +339,17 @@ export function Users() {
                         <TableCell className="font-medium">
                           o.mon@uas.ph
                         </TableCell>
-                        <TableCell>
-                          <Badge variant ="secondary">Spare</Badge>
+                        <TableCell className="font-medium">
+                          Orville
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                          ASDJ23HKJD1324
+                          Intern
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                          Headphones
+                          Pampanga
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           2023-10-18 03:21 PM
-                        </TableCell>
-                        <TableCell>
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button
-                                aria-haspopup="true"
-                                size="icon"
-                                variant="ghost"
-                              >
-                                <MoreHorizontal className="h-4 w-4" />
-                                <span className="sr-only">Toggle menu</span>
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                              <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                              <DropdownMenuItem>Edit</DropdownMenuItem>
-                              <DropdownMenuItem>Delete</DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -418,38 +366,19 @@ export function Users() {
                           Kile Santiago
                         </TableCell>
                         <TableCell className="font-medium">
-                          Plantronics Headphones
+                          k.santiago@uas.ph
                         </TableCell>
-                        <TableCell>
-                        <Badge variant ="secondary">Spare</Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          SHDKKJK123123
+                        <TableCell className="font-medium">
+                          Kile
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                          Headphones
+                          IT Asset Manager
+                        </TableCell>
+                        <TableCell className="hidden md:table-cell">
+                         Pampanga
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           2023-11-29 08:15 AM
-                        </TableCell>
-                        <TableCell>
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button
-                                aria-haspopup="true"
-                                size="icon"
-                                variant="ghost"
-                              >
-                                <MoreHorizontal className="h-4 w-4" />
-                                <span className="sr-only">Toggle menu</span>
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                              <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                              <DropdownMenuItem>Edit</DropdownMenuItem>
-                              <DropdownMenuItem>Delete</DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -466,38 +395,19 @@ export function Users() {
                           Kent Escala
                         </TableCell>
                         <TableCell className="font-medium">
-                          Lenovo Thinkpad
+                          k.escala@uas.ph
                         </TableCell>
-                        <TableCell>
-                          <Badge variant="destructive">Defective</Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          ASDKJASDKJ123567
+                        <TableCell className="font-medium">
+                          Kent
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                          Laptop
+                          Intern
+                        </TableCell>
+                        <TableCell className="hidden md:table-cell">
+                          Pampanga
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           2023-12-25 11:59 PM
-                        </TableCell>
-                        <TableCell>
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button
-                                aria-haspopup="true"
-                                size="icon"
-                                variant="ghost"
-                              >
-                                <MoreHorizontal className="h-4 w-4" />
-                                <span className="sr-only">Toggle menu</span>
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                              <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                              <DropdownMenuItem>Edit</DropdownMenuItem>
-                              <DropdownMenuItem>Delete</DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -511,41 +421,22 @@ export function Users() {
                           />
                         </TableCell>
                         <TableCell className="font-medium">
-                          Ask Ketchum
+                        Ask Ketchum
                         </TableCell>
                         <TableCell className="font-medium">
-                          DELL Monitor
+                        a.ketchum@uas.ph
                         </TableCell>
-                        <TableCell>
-                          <Badge variant="secondary">Spare</Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                         ASHJKDK1234128
+                        <TableCell className="font-medium">
+                        Ash
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                          Monitor
+                         IT Support
+                        </TableCell>
+                        <TableCell className="hidden md:table-cell">
+                        Pasig
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           2024-01-01 12:00 AM
-                        </TableCell>
-                        <TableCell>
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button
-                                aria-haspopup="true"
-                                size="icon"
-                                variant="ghost"
-                              >
-                                <MoreHorizontal className="h-4 w-4" />
-                                <span className="sr-only">Toggle menu</span>
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                              <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                              <DropdownMenuItem>Edit</DropdownMenuItem>
-                              <DropdownMenuItem>Delete</DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
                         </TableCell>
                       </TableRow>
                       <TableRow>
@@ -562,38 +453,19 @@ export function Users() {
                           Coco Martin
                         </TableCell>
                         <TableCell className="font-medium">
-                          Plantronics Headphones
+                          c.martin@uas.ph
                         </TableCell>
-                        <TableCell>
-                         <Badge variant="destructive">Defective</Badge>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          JLSDIKL123789
+                        <TableCell className="font-medium">
+                          Coco
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                         Headphones
+                          IT Support
+                        </TableCell>
+                        <TableCell className="hidden md:table-cell">
+                         Pasig
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           2024-02-14 02:14 PM
-                        </TableCell>
-                        <TableCell>
-                          <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                              <Button
-                                aria-haspopup="true"
-                                size="icon"
-                                variant="ghost"
-                              >
-                                <MoreHorizontal className="h-4 w-4" />
-                                <span className="sr-only">Toggle menu</span>
-                              </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent align="end">
-                              <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                              <DropdownMenuItem>Edit</DropdownMenuItem>
-                              <DropdownMenuItem>Delete</DropdownMenuItem>
-                            </DropdownMenuContent>
-                          </DropdownMenu>
                         </TableCell>
                       </TableRow>
                     </TableBody>
