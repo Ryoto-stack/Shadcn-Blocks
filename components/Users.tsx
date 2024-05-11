@@ -1,21 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Droplets,
+  DropletsIcon,
   File,
+  FilePlusIcon,
   Home,
+  InboxIcon,
+  KeyboardIcon,
   LineChart,
   ListFilter,
   MoreHorizontal,
   Package,
   Package2,
+  PackageIcon,
+  PackagePlusIcon,
   PanelLeft,
   PlusCircle,
+  SaveIcon,
   Search,
   Settings,
+  SettingsIcon,
   ShoppingCart,
   Square,
   SquareGanttChart,
+  SquareGanttChartIcon,
   Users2,
+  Users2Icon,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -63,12 +74,30 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 
-const menu = ["Dashboard", "Activity", "Assets", "Analytics"];
+const menu = [
+  "Dashboard",
+  "Assets",
+  "Activity",
+  "Users",
+  "Analytics",
+  "Create Assets",
+  "Create License",
+  "Create Accessories",
+  "Create Consumables",
+  "Create Component",
+  "Settings",
+];
 const menu2 = [
   "Dashboard",
-  "Activity",
   "Assets",
+  "Activity",
+  "Users",
   "Analytics",
+  "Create Assets",
+  "Create License",
+  "Create Accessories",
+  "Create Consumables",
+  "Create Component",
   "Settings",
 ];
 
@@ -81,8 +110,7 @@ export function Users() {
             href=""
             className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
           >
-            <Users2 className="h-4 w-4 transition-all scale-110" />
-            <span className="sr-only">Acme Inc</span>
+            <Users2Icon className="h-4 w-4 transition-all scale-110" />
           </Link>
           {menu.map((menu: string, index: number) => {
             return (
@@ -92,16 +120,34 @@ export function Users() {
                     <TooltipTrigger asChild>
                       <Link
                         href={`/${menu.toLowerCase()}`}
-                        
                         className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
                       >
                         {menu === "Dashboard" && <Home className="h-5 w-5" />}
+                        {menu === "Assets" && <PackageIcon className="h-5 w-5" />}
                         {menu === "Activity" && (
-                          <SquareGanttChart className="h-5 w-5" />
+                          <SquareGanttChartIcon className="h-5 w-5" />
                         )}
-                        {menu === "Assets" && <Package className="h-5 w-5" />}
+                        {menu === "Users" && <Users2 className="h-5 w-5" />}
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
+                        )}
+                        {menu === "Create Assets" && (
+                          <PackagePlusIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Create License" && (
+                          <FilePlusIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Create Accessories" && (
+                          <KeyboardIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Create Consumables" && (
+                          <Droplets className="h-5 w-5" />
+                        )}
+                        {menu === "Create Component" && (
+                          <InboxIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Settings" && (
+                          <Settings className="h-5 w-5" />
                         )}
                         <span className="sr-only">{menu}</span>
                       </Link>
@@ -112,22 +158,6 @@ export function Users() {
               </div>
             );
           })}
-        </nav>
-        <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
-          <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Link
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-              >
-                <Settings className="h-5 w-5" />
-                <span className="sr-only">Settings</span>
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent side="right">Settings</TooltipContent>
-          </Tooltip>
-          </TooltipProvider>
         </nav>
       </aside>
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
@@ -146,30 +176,38 @@ export function Users() {
                   className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
                 >
                   <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-                  <span className="sr-only">Acme Inc</span>
                 </Link>
                 {menu2.map((menu2: string, index: number) => {
                   return (
                     <div key={index}>
                       <Link
                         href={`/${menu2.toLowerCase()}`}
-                        
                         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu2 === "Activity" && (
-                          <SquareGanttChart className="h-5 w-5" />
-                        )}
-                        {menu2 === "Assets" && (
-                          <Package className="h-5 w-5" />
+                        {menu2 === "Assets" && <Package className="h-5 w-5" />}
+                        {menu2 === "Activity" && <SquareGanttChartIcon className="h-5 w-5" />}
+                        {menu2 === "Users" && (
+                          <Users2Icon className="h-5 w-5" />
                         )}
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
-                        {menu2 === "Settings" && (
-                          <Settings className="h-5 w-5" />
+                        {menu2 === "Create License" && (
+                          <SaveIcon className="h-5 w-5" />
                         )}
-                        {menu2}
+                        {menu2 === "Create Accessories" && (
+                          <KeyboardIcon className="h-5 w-5" />
+                        )}
+                        {menu2 === "Create Consumables" && (
+                          <DropletsIcon className="h-5 w-5" />
+                        )}
+                        {menu2 === "Create Component" && (
+                          <InboxIcon className="h-5 w-5" />
+                        )}
+                        {menu2 === "Settings" && (
+                          <SettingsIcon className="h-5 w-5" />
+                        )}
                       </Link>
                     </div>
                   );
@@ -190,7 +228,7 @@ export function Users() {
                   <Link href="#">Users</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator/>
+              <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbPage>All Users</BreadcrumbPage>
               </BreadcrumbItem>
@@ -233,7 +271,6 @@ export function Users() {
         <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
           <Tabs defaultValue="all">
             <div className="flex items-center">
-              
               <div className="ml-auto flex items-center gap-2">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -246,14 +283,20 @@ export function Users() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
                     <DropdownMenuLabel>Filter by</DropdownMenuLabel>
-                    <DropdownMenuSeparator/>    
-                    <Badge variant ="default">Position</Badge>
-                          <DropdownMenuCheckboxItem>IT Support</DropdownMenuCheckboxItem>
-                          <DropdownMenuCheckboxItem>IT Asset Manager</DropdownMenuCheckboxItem>
-                          <DropdownMenuCheckboxItem>Intern</DropdownMenuCheckboxItem>
-                    <Badge variant ="default">Branch</Badge>
-                          <DropdownMenuCheckboxItem>Pampanga</DropdownMenuCheckboxItem>
-                          <DropdownMenuCheckboxItem>Pasig</DropdownMenuCheckboxItem>
+                    <DropdownMenuSeparator />
+                    <Badge variant="default">Position</Badge>
+                    <DropdownMenuCheckboxItem>
+                      IT Support
+                    </DropdownMenuCheckboxItem>
+                    <DropdownMenuCheckboxItem>
+                      IT Asset Manager
+                    </DropdownMenuCheckboxItem>
+                    <DropdownMenuCheckboxItem>Intern</DropdownMenuCheckboxItem>
+                    <Badge variant="default">Branch</Badge>
+                    <DropdownMenuCheckboxItem>
+                      Pampanga
+                    </DropdownMenuCheckboxItem>
+                    <DropdownMenuCheckboxItem>Pasig</DropdownMenuCheckboxItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
                 <Button size="sm" variant="outline" className="h-8 gap-1">
@@ -307,9 +350,7 @@ export function Users() {
                         <TableCell className="font-medium">
                           m.dagami@uas.ph
                         </TableCell>
-                        <TableCell className="font-medium">
-                          Mecca
-                        </TableCell>
+                        <TableCell className="font-medium">Mecca</TableCell>
                         <TableCell className="hidden md:table-cell">
                           Intern
                         </TableCell>
@@ -336,9 +377,7 @@ export function Users() {
                         <TableCell className="font-medium">
                           o.mon@uas.ph
                         </TableCell>
-                        <TableCell className="font-medium">
-                          Orville
-                        </TableCell>
+                        <TableCell className="font-medium">Orville</TableCell>
                         <TableCell className="hidden md:table-cell">
                           Intern
                         </TableCell>
@@ -365,14 +404,12 @@ export function Users() {
                         <TableCell className="font-medium">
                           k.santiago@uas.ph
                         </TableCell>
-                        <TableCell className="font-medium">
-                          Kile
-                        </TableCell>
+                        <TableCell className="font-medium">Kile</TableCell>
                         <TableCell className="hidden md:table-cell">
                           IT Asset Manager
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                         Pampanga
+                          Pampanga
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           2023-11-29 08:15 AM
@@ -394,9 +431,7 @@ export function Users() {
                         <TableCell className="font-medium">
                           k.escala@uas.ph
                         </TableCell>
-                        <TableCell className="font-medium">
-                          Kent
-                        </TableCell>
+                        <TableCell className="font-medium">Kent</TableCell>
                         <TableCell className="hidden md:table-cell">
                           Intern
                         </TableCell>
@@ -418,19 +453,17 @@ export function Users() {
                           />
                         </TableCell>
                         <TableCell className="font-medium">
-                        Ask Ketchum
+                          Ask Ketchum
                         </TableCell>
                         <TableCell className="font-medium">
-                        a.ketchum@uas.ph
+                          a.ketchum@uas.ph
                         </TableCell>
-                        <TableCell className="font-medium">
-                        Ash
+                        <TableCell className="font-medium">Ash</TableCell>
+                        <TableCell className="hidden md:table-cell">
+                          IT Support
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                         IT Support
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                        Pasig
+                          Pasig
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           2024-01-01 12:00 AM
@@ -452,14 +485,12 @@ export function Users() {
                         <TableCell className="font-medium">
                           c.martin@uas.ph
                         </TableCell>
-                        <TableCell className="font-medium">
-                          Coco
-                        </TableCell>
+                        <TableCell className="font-medium">Coco</TableCell>
                         <TableCell className="hidden md:table-cell">
                           IT Support
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                         Pasig
+                          Pasig
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           2024-02-14 02:14 PM

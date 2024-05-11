@@ -2,17 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ChevronLeft,
+  DropletsIcon,
+  FilePlusIcon,
   Home,
+  InboxIcon,
+  KeyboardIcon,
   LineChart,
   Package,
   Package2,
+  PackageIcon,
+  PackagePlusIcon,
   PanelLeft,
   PlusCircle,
+  SaveIcon,
   Search,
   Settings,
+  SettingsIcon,
   ShoppingCart,
+  SquareGanttChartIcon,
   Upload,
   Users2,
+  Users2Icon,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -68,13 +78,30 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 
-const menu = ["Dashboard", "Orders", "Products", "Customers", "Analytics"];
+const menu = [
+  "Dashboard",
+  "Assets",
+  "Activity",
+  "Users",
+  "Analytics",
+  "Create Assets",
+  "Create License",
+  "Create Accessories",
+  "Create Consumables",
+  "Create Component",
+  "Settings",
+];
 const menu2 = [
   "Dashboard",
-  "Orders",
-  "Products",
-  "Customers",
+  "Assets",
+  "Activity",
+  "Users",
   "Analytics",
+  "Create Assets",
+  "Create License",
+  "Create Accessories",
+  "Create Consumables",
+  "Create Component",
   "Settings",
 ];
 
@@ -82,13 +109,12 @@ export function EditProduct() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
-        <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
+      <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
           <Link
-            href="#"
+            href=""
             className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
           >
-            <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
-            <span className="sr-only">Acme Inc</span>
+            <Users2Icon className="h-4 w-4 transition-all scale-110" />
           </Link>
           {menu.map((menu: string, index: number) => {
             return (
@@ -98,17 +124,34 @@ export function EditProduct() {
                     <TooltipTrigger asChild>
                       <Link
                         href={`/${menu.toLowerCase()}`}
-                        
                         className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
                       >
                         {menu === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu === "Orders" && (
-                          <ShoppingCart className="h-5 w-5" />
+                        {menu === "Assets" && <PackageIcon className="h-5 w-5" />}
+                        {menu === "Activity" && (
+                          <SquareGanttChartIcon className="h-5 w-5" />
                         )}
-                        {menu === "Products" && <Package className="h-5 w-5" />}
-                        {menu === "Customers" && <Users2 className="h-5 w-5" />}
+                        {menu === "Users" && <Users2 className="h-5 w-5" />}
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
+                        )}
+                        {menu === "Create Assets" && (
+                          <PackagePlusIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Create License" && (
+                          <FilePlusIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Create Accessories" && (
+                          <KeyboardIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Create Consumables" && (
+                          <DropletsIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Create Component" && (
+                          <InboxIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Settings" && (
+                          <Settings className="h-5 w-5" />
                         )}
                         <span className="sr-only">{menu}</span>
                       </Link>
@@ -119,22 +162,6 @@ export function EditProduct() {
               </div>
             );
           })}
-        </nav>
-        <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-                >
-                  <Settings className="h-5 w-5" />
-                  <span className="sr-only">Settings</span>
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent side="right">Settings</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
         </nav>
       </aside>
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
@@ -149,37 +176,42 @@ export function EditProduct() {
             <SheetContent side="left" className="sm:max-w-xs">
               <nav className="grid gap-6 text-lg font-medium">
                 <Link
-                  href="#"
+                  href="/"
                   className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
                 >
                   <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-                  <span className="sr-only">Acme Inc</span>
                 </Link>
                 {menu2.map((menu2: string, index: number) => {
                   return (
                     <div key={index}>
                       <Link
                         href={`/${menu2.toLowerCase()}`}
-                        
                         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu2 === "Orders" && (
-                          <ShoppingCart className="h-5 w-5" />
-                        )}
-                        {menu2 === "Products" && (
-                          <Package className="h-5 w-5" />
-                        )}
-                        {menu2 === "Customers" && (
-                          <Users2 className="h-5 w-5" />
+                        {menu2 === "Assets" && <Package className="h-5 w-5" />}
+                        {menu2 === "Activity" && <SquareGanttChartIcon className="h-5 w-5" />}
+                        {menu2 === "Users" && (
+                          <Users2Icon className="h-5 w-5" />
                         )}
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
-                        {menu2 === "Settings" && (
-                          <Settings className="h-5 w-5" />
+                        {menu2 === "Create License" && (
+                          <SaveIcon className="h-5 w-5" />
                         )}
-                        {menu2}
+                        {menu2 === "Create Accessories" && (
+                          <KeyboardIcon className="h-5 w-5" />
+                        )}
+                        {menu2 === "Create Consumables" && (
+                          <DropletsIcon className="h-5 w-5" />
+                        )}
+                        {menu2 === "Create Component" && (
+                          <InboxIcon className="h-5 w-5" />
+                        )}
+                        {menu2 === "Settings" && (
+                          <SettingsIcon className="h-5 w-5" />
+                        )}
                       </Link>
                     </div>
                   );

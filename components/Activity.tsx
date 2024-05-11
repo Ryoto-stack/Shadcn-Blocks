@@ -31,6 +31,7 @@ import {
   Droplet,
   Droplets,
   InboxIcon,
+  FilePlusIcon,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -90,11 +91,11 @@ const menu = [
   "Assets",
   "Users",
   "Analytics",
-  "Create Assets",
-  "Create License",
-  "Create Accessories",
-  "Create Consumables",
-  "Create Component",
+  "CreateAssets",
+  "CreateLicense",
+  "CreateAccessories",
+  "CreateConsumables",
+  "CreateComponent",
   "Settings",
 ];
 const menu2 = [
@@ -102,11 +103,11 @@ const menu2 = [
   "Assets",
   "Users",
   "Analytics",
-  "Create Assets",
-  "Create License",
-  "Create Accessories",
-  "Create Consumables",
-  "Create Component",
+  "CreateAssets",
+  "CreateLicense",
+  "CreateAccessories",
+  "CreateConsumables",
+  "CreateComponent",
   "Settings",
 ];
 
@@ -149,19 +150,19 @@ export function Activity() {
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
-                        {menu === "Create Assets" && (
+                        {menu === "CreateAssets" && (
                           <PackagePlus className="h-5 w-5" />
                         )}
-                        {menu === "Create License" && (
-                          <Save className="h-5 w-5" />
+                        {menu === "CreateLicense" && (
+                          <FilePlusIcon className="h-5 w-5" />
                         )}
-                        {menu === "Create Accessories" && (
+                        {menu === "CreateAccessories" && (
                           <KeyboardIcon className="h-5 w-5" />
                         )}
-                        {menu === "Create Consumables" && (
+                        {menu === "CreateConsumables" && (
                           <Droplets className="h-5 w-5" />
                         )}
-                        {menu === "Create Component" && (
+                        {menu === "CreateComponent" && (
                           <InboxIcon className="h-5 w-5" />
                         )}
                         {menu === "Settings" && (
@@ -190,7 +191,7 @@ export function Activity() {
             <SheetContent side="left" className="sm:max-w-xs">
               <nav className="grid gap-6 text-lg font-medium">
                 <Link
-                  href="/"
+                  href="#"
                   className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
                 >
                   <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
@@ -210,19 +211,19 @@ export function Activity() {
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
-                        {menu2 === "Create Assets" && (
+                        {menu2 === "CreateAssets" && (
                           <PackagePlus className="h-5 w-5" />
                         )}
-                        {menu2 === "Create License" && (
-                          <Save className="h-5 w-5" />
+                        {menu2 === "CreateLicense" && (
+                          <FilePlusIcon className="h-5 w-5" />
                         )}
-                        {menu2 === "Create Accessories" && (
+                        {menu2 === "CreateAccessories" && (
                           <KeyboardIcon className="h-5 w-5" />
                         )}
-                        {menu2 === "Create Consumables" && (
+                        {menu2 === "CreateConsumables" && (
                           <Droplets className="h-5 w-5" />
                         )}
-                        {menu2 === "Create Component" && (
+                        {menu2 === "CreateComponent" && (
                           <InboxIcon className="h-5 w-5" />
                         )}
                         {menu2 === "Settings" && (
@@ -244,12 +245,6 @@ export function Activity() {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="#">Activity</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
                 <BreadcrumbPage>Recent Activity</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
@@ -258,9 +253,7 @@ export function Activity() {
             <MenubarMenu>
               <MenubarTrigger className="py-3">Create New</MenubarTrigger>
               <MenubarContent>
-                <MenubarItem>
-                  Assets
-                  </MenubarItem>
+                <MenubarItem>Assets</MenubarItem>
                 <MenubarItem>License</MenubarItem>
                 <MenubarItem>Accessories</MenubarItem>
                 <MenubarItem>Consumables</MenubarItem>
@@ -313,12 +306,6 @@ export function Activity() {
                     Management and Insightful Analysis.
                   </CardDescription>
                 </CardHeader>
-                <CardFooter>
-                  <Button className="px-2 py-3">
-                    {" "}
-                    <link href="#" /> Create New Order
-                  </Button>
-                </CardFooter>
               </Card>
               <Card x-chunk="dashboard-05-chunk-1">
                 <CardHeader className="pb-2 flex justify-center items-center">
@@ -379,10 +366,10 @@ export function Activity() {
                     <CardDescription>
                       Recent Activity from your Inventory
                     </CardDescription>
-                    <div className="flex items-center">
-                      <div className="flex items-center gap-2">
+                    <div className="flex items-end justify-end">
+                      <div className="flex items-end gap-6">
                         <DropdownMenu>
-                          <DropdownMenuTrigger asChild>
+                          <DropdownMenuTrigger>
                             <Button
                               variant="outline"
                               size="sm"
@@ -398,6 +385,9 @@ export function Activity() {
                             <DropdownMenuLabel>Filter by</DropdownMenuLabel>
                             <DropdownMenuSeparator />
                             <DropdownMenuCheckboxItem checked>
+                              All
+                            </DropdownMenuCheckboxItem>
+                            <DropdownMenuCheckboxItem>
                               Approved
                             </DropdownMenuCheckboxItem>
                             <DropdownMenuCheckboxItem>
