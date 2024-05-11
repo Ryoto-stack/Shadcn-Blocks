@@ -23,6 +23,14 @@ import {
   Truck,
   User2,
   Users2,
+  ActivityIcon,
+  PackagePlus,
+  KeyboardIcon,
+  SaveAllIcon,
+  Save,
+  Droplet,
+  Droplets,
+  InboxIcon,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -77,28 +85,53 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 
-const menu = ["Dashboard", "Orders", "Products", "Users", "Analytics"];
-const menu2 = [
+const menu = [
   "Dashboard",
-  "Orders",
-  "Products",
+  "Assets",
   "Users",
   "Analytics",
+  "Create Assets",
+  "Create License",
+  "Create Accessories",
+  "Create Consumables",
+  "Create Component",
   "Settings",
 ];
+const menu2 = [
+  "Dashboard",
+  "Assets",
+  "Users",
+  "Analytics",
+  "Create Assets",
+  "Create License",
+  "Create Accessories",
+  "Create Consumables",
+  "Create Component",
+  "Settings",
+];
+
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
+
 import React from "react";
 
-export function Orders() {
+export function Activity() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
         <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
           <Link
-            href="#"
+            href=""
             className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
           >
-            <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
-            <span className="sr-only">Acme Inc</span>
+            <SquareGanttChart className="h-4 w-4 transition-all scale-110" />
           </Link>
           {menu.map((menu: string, index: number) => {
             return (
@@ -111,13 +144,28 @@ export function Orders() {
                         className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
                       >
                         {menu === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu === "Orders" && (
-                          <SquareGanttChart className="h-5 w-5" />
-                        )}
-                        {menu === "Products" && <Package className="h-5 w-5" />}
+                        {menu === "Assets" && <Package className="h-5 w-5" />}
                         {menu === "Users" && <Users2 className="h-5 w-5" />}
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
+                        )}
+                        {menu === "Create Assets" && (
+                          <PackagePlus className="h-5 w-5" />
+                        )}
+                        {menu === "Create License" && (
+                          <Save className="h-5 w-5" />
+                        )}
+                        {menu === "Create Accessories" && (
+                          <KeyboardIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Create Consumables" && (
+                          <Droplets className="h-5 w-5" />
+                        )}
+                        {menu === "Create Component" && (
+                          <InboxIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Settings" && (
+                          <Settings className="h-5 w-5" />
                         )}
                         <span className="sr-only">{menu}</span>
                       </Link>
@@ -128,22 +176,6 @@ export function Orders() {
               </div>
             );
           })}
-        </nav>
-        <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-                >
-                  <Settings className="h-5 w-5" />
-                  <span className="sr-only">Settings</span>
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent side="right">Settings</TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
         </nav>
       </aside>
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
@@ -162,9 +194,7 @@ export function Orders() {
                   className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
                 >
                   <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-                  <span className="sr-only">Acme Inc</span>
                 </Link>
-
                 {menu2.map((menu2: string, index: number) => {
                   return (
                     <div key={index}>
@@ -173,22 +203,31 @@ export function Orders() {
                         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu2 === "Orders" && (
-                          <SquareGanttChart className="h-5 w-5" />
-                        )}
-                        {menu2 === "Products" && (
-                          <Package className="h-5 w-5" />
-                        )}
+                        {menu2 === "Assets" && <Package className="h-5 w-5" />}
                         {menu2 === "Customers" && (
                           <Users2 className="h-5 w-5" />
                         )}
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
+                        {menu2 === "Create Assets" && (
+                          <PackagePlus className="h-5 w-5" />
+                        )}
+                        {menu2 === "Create License" && (
+                          <Save className="h-5 w-5" />
+                        )}
+                        {menu2 === "Create Accessories" && (
+                          <KeyboardIcon className="h-5 w-5" />
+                        )}
+                        {menu2 === "Create Consumables" && (
+                          <Droplets className="h-5 w-5" />
+                        )}
+                        {menu2 === "Create Component" && (
+                          <InboxIcon className="h-5 w-5" />
+                        )}
                         {menu2 === "Settings" && (
                           <Settings className="h-5 w-5" />
                         )}
-                        {menu2}
                       </Link>
                     </div>
                   );
@@ -215,6 +254,20 @@ export function Orders() {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
+          <Menubar>
+            <MenubarMenu>
+              <MenubarTrigger className="py-3">Create New</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem>
+                  Assets
+                  </MenubarItem>
+                <MenubarItem>License</MenubarItem>
+                <MenubarItem>Accessories</MenubarItem>
+                <MenubarItem>Consumables</MenubarItem>
+                <MenubarItem>Component</MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+          </Menubar>
           <div className="relative ml-auto flex-1 md:grow-0">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
@@ -261,23 +314,30 @@ export function Orders() {
                   </CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  <Button className="px-2 py-3"> <link href="#" /> Create New Order</Button>
+                  <Button className="px-2 py-3">
+                    {" "}
+                    <link href="#" /> Create New Order
+                  </Button>
                 </CardFooter>
               </Card>
               <Card x-chunk="dashboard-05-chunk-1">
                 <CardHeader className="pb-2 flex justify-center items-center">
-                  <CardDescription>Approve</CardDescription><CircleCheck className="h-5 w-5" />
-                  <CardTitle className="text-4xl flex justify-center items-center">6</CardTitle>
+                  <CardDescription>Approve</CardDescription>
+                  <CircleCheck className="h-5 w-5" />
+                  <CardTitle className="text-4xl flex justify-center items-center">
+                    6
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-xs text-muted-foreground flex justify-center items-center">
                     Total of Approve
                   </div>
                 </CardContent>
-              </Card>              
+              </Card>
               <Card x-chunk="dashboard-05-chunk-1">
                 <CardHeader className="pb-2 flex justify-center items-center">
-                  <CardDescription>Decline</CardDescription><CircleX className="h-5 w-5" />
+                  <CardDescription>Decline</CardDescription>
+                  <CircleX className="h-5 w-5" />
                   <CardTitle className="text-4xl">2</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -288,7 +348,8 @@ export function Orders() {
               </Card>
               <Card x-chunk="dashboard-05-chunk-1">
                 <CardHeader className="pb-2 flex justify-center items-center">
-                  <CardDescription>Pending</CardDescription><CircleDotDashed className="h-5 w-5" />
+                  <CardDescription>Pending</CardDescription>
+                  <CircleDotDashed className="h-5 w-5" />
                   <CardTitle className="text-4xl">0</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -299,12 +360,13 @@ export function Orders() {
               </Card>
               <Card x-chunk="dashboard-05-chunk-2">
                 <CardHeader className="pb-2 flex justify-center items-center">
-                  <CardDescription>Total activity</CardDescription><ReceiptText className="h-5 w-5" />
+                  <CardDescription>Total activity</CardDescription>
+                  <ReceiptText className="h-5 w-5" />
                   <CardTitle className="text-4xl ">8</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-xs text-muted-foreground flex justify-center items-center">
-                    Total of Activity 
+                    Total of Activity
                   </div>
                 </CardContent>
               </Card>
@@ -318,39 +380,41 @@ export function Orders() {
                       Recent Activity from your Inventory
                     </CardDescription>
                     <div className="flex items-center">
-                <div className="flex items-center gap-2">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="h-7 gap-1 text-sm"
-                      >
-                        <ListFilter className="h-3.5 w-3.5" />
-                        <span className="sr-only sm:not-sr-only">Filter</span>
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Filter by</DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuCheckboxItem checked>
-                        Approved
-                      </DropdownMenuCheckboxItem>
-                      <DropdownMenuCheckboxItem>
-                        Declined
-                      </DropdownMenuCheckboxItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="h-7 gap-1 text-sm"
-                  >
-                    <Download className="h-3.5 w-3.5" />
-                    <span className="sr-only sm:not-sr-only">Export</span>
-                  </Button>
-                </div>
-              </div>
+                      <div className="flex items-center gap-2">
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="h-7 gap-1 text-sm"
+                            >
+                              <ListFilter className="h-3.5 w-3.5" />
+                              <span className="sr-only sm:not-sr-only">
+                                Filter
+                              </span>
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end">
+                            <DropdownMenuLabel>Filter by</DropdownMenuLabel>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuCheckboxItem checked>
+                              Approved
+                            </DropdownMenuCheckboxItem>
+                            <DropdownMenuCheckboxItem>
+                              Declined
+                            </DropdownMenuCheckboxItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="h-7 gap-1 text-sm"
+                        >
+                          <Download className="h-3.5 w-3.5" />
+                          <span className="sr-only sm:not-sr-only">Export</span>
+                        </Button>
+                      </div>
+                    </div>
                   </CardHeader>
                   <CardContent>
                     <Table>
@@ -366,15 +430,9 @@ export function Orders() {
                           <TableHead className="hidden md:table-cell">
                             Date
                           </TableHead>
-                          <TableHead className="text-right">
-                            Item
-                          </TableHead>
-                          <TableHead className="text-right">
-                            Serial
-                          </TableHead>
-                          <TableHead className="text-right">
-                            Remarks
-                          </TableHead>
+                          <TableHead className="text-right">Item</TableHead>
+                          <TableHead className="text-right">Serial</TableHead>
+                          <TableHead className="text-right">Remarks</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
@@ -383,7 +441,7 @@ export function Orders() {
                             <div className="font-medium">Mecca Denise</div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                              Assets
+                            Assets
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
                             <Badge className="text-xs" variant="secondary">
@@ -391,18 +449,14 @@ export function Orders() {
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
-                              2024-02-23
+                            2024-02-23
                           </TableCell>
+                          <TableCell className="text-right">Monitor</TableCell>
+                          <TableCell className="text-right">ABCD1234</TableCell>
                           <TableCell className="text-right">
-                              Monitor
+                            For Replace
                           </TableCell>
-                          <TableCell className="text-right">
-                              ABCD1234
-                          </TableCell>
-                          <TableCell className="text-right">
-                              For Replace
-                          </TableCell>
-                        </TableRow> 
+                        </TableRow>
                         <TableRow>
                           <TableCell>
                             <div className="font-medium">Kent Escala</div>
@@ -416,16 +470,14 @@ export function Orders() {
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
-                              2024-06-24
+                            2024-06-24
                           </TableCell>
                           <TableCell className="text-right">
-                              Office 365 Personal
+                            Office 365 Personal
                           </TableCell>
+                          <TableCell className="text-right">N/A</TableCell>
                           <TableCell className="text-right">
-                              N/A
-                          </TableCell>
-                          <TableCell className="text-right">
-                              For Upgrade
+                            For Upgrade
                           </TableCell>
                         </TableRow>
                         <TableRow>
@@ -441,18 +493,14 @@ export function Orders() {
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
-                              2024-06-24
+                            2024-06-24
                           </TableCell>
+                          <TableCell className="text-right">Headset</TableCell>
+                          <TableCell className="text-right">1234ABCD</TableCell>
                           <TableCell className="text-right">
-                              Headset
+                            For deploy
                           </TableCell>
-                          <TableCell className="text-right">
-                              1234ABCD
-                          </TableCell>
-                          <TableCell className="text-right">
-                              For deploy
-                          </TableCell>
-                        </TableRow>                        
+                        </TableRow>
                         <TableRow>
                           <TableCell>
                             <div className="font-medium">Orville Montero</div>
@@ -466,16 +514,12 @@ export function Orders() {
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
-                              2024-06-24
+                            2024-06-24
                           </TableCell>
+                          <TableCell className="text-right">Monitor</TableCell>
+                          <TableCell className="text-right">ASDV3162</TableCell>
                           <TableCell className="text-right">
-                              Monitor
-                          </TableCell>
-                          <TableCell className="text-right">
-                              ASDV3162
-                          </TableCell>
-                          <TableCell className="text-right">
-                              For Replace
+                            For Replace
                           </TableCell>
                         </TableRow>
                         <TableRow>
@@ -491,24 +535,22 @@ export function Orders() {
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
-                              2024-06-25
+                            2024-06-25
                           </TableCell>
                           <TableCell className="text-right">
-                              Laptop(ASUS)
+                            Laptop(ASUS)
                           </TableCell>
+                          <TableCell className="text-right">QW12QW12</TableCell>
                           <TableCell className="text-right">
-                              QW12QW12
+                            For Replace
                           </TableCell>
-                          <TableCell className="text-right">
-                              For Replace
-                          </TableCell>
-                        </TableRow> 
+                        </TableRow>
                         <TableRow>
                           <TableCell>
                             <div className="font-medium">Micah Avance</div>
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
-                             Assets
+                            Assets
                           </TableCell>
                           <TableCell className="hidden sm:table-cell">
                             <Badge className="text-xs" variant="secondary">
@@ -516,16 +558,14 @@ export function Orders() {
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
-                              2024-06-25
+                            2024-06-25
                           </TableCell>
                           <TableCell className="text-right">
-                              Laptop(ASUS)
+                            Laptop(ASUS)
                           </TableCell>
+                          <TableCell className="text-right">QW12QW12</TableCell>
                           <TableCell className="text-right">
-                              QW12QW12
-                          </TableCell>
-                          <TableCell className="text-right">
-                              For Repair
+                            For Repair
                           </TableCell>
                         </TableRow>
                         <TableRow>
@@ -541,16 +581,14 @@ export function Orders() {
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
-                              2024-06-23
+                            2024-06-23
                           </TableCell>
                           <TableCell className="text-right">
-                              Cloud Storage
+                            Cloud Storage
                           </TableCell>
+                          <TableCell className="text-right">N/A</TableCell>
                           <TableCell className="text-right">
-                              N/A
-                          </TableCell>
-                          <TableCell className="text-right">
-                              For Upgrade
+                            For Upgrade
                           </TableCell>
                         </TableRow>
                         <TableRow>
@@ -566,21 +604,16 @@ export function Orders() {
                             </Badge>
                           </TableCell>
                           <TableCell className="hidden md:table-cell">
-                              2024-06-26
+                            2024-06-26
                           </TableCell>
                           <TableCell className="text-right">
-                              Cloud Storage
+                            Cloud Storage
                           </TableCell>
+                          <TableCell className="text-right">N/A</TableCell>
                           <TableCell className="text-right">
-                              N/A
-                          </TableCell>
-                          <TableCell className="text-right">
-                              For Upgrade
+                            For Upgrade
                           </TableCell>
                         </TableRow>
-                      
-
-
                       </TableBody>
                     </Table>
                   </CardContent>
@@ -588,9 +621,7 @@ export function Orders() {
               </TabsContent>
             </Tabs>
           </div>
-          <div>
-             {/* side pannel */}
-          </div>
+          <div>{/* side pannel */}</div>
         </main>
       </div>
     </div>

@@ -56,7 +56,6 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
-
 import Barchart from "@/app/component/index";
 
 export function Dashboard() {
@@ -78,13 +77,13 @@ export function Dashboard() {
             Dashboard
           </Link>
           <Link
-            href="/orders"
+            href="/activity"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Activity
           </Link>
           <Link
-            href="/products"
+            href="/assets"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Assets
@@ -107,19 +106,11 @@ export function Dashboard() {
               <MenubarContent>
                 <MenubarItem>
                   Assets
-                </MenubarItem>
-                <MenubarItem>
-                  License
-                </MenubarItem>
-                <MenubarItem>
-                  Accessories
-                </MenubarItem>
-                <MenubarItem>
-                  Consumables
-                </MenubarItem>
-                <MenubarItem>
-                  Component
-                </MenubarItem>
+                  </MenubarItem>
+                <MenubarItem>License</MenubarItem>
+                <MenubarItem>Accessories</MenubarItem>
+                <MenubarItem>Consumables</MenubarItem>
+                <MenubarItem>Component</MenubarItem>
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
@@ -148,16 +139,16 @@ export function Dashboard() {
                 Dashboard
               </Link>
               <Link
-                href="/Orders"
+                href="/activity"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Orders
+                Activity
               </Link>
               <Link
-                href="/products"
+                href="/assets"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Products
+                Assets
               </Link>
               <Link
                 href="/users"
@@ -272,12 +263,10 @@ export function Dashboard() {
               <CardTitle className="text-sm font-medium">Users</CardTitle>
               <Users className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">123</div>
-              <Button variant="link" className="text-xs">
-                View All
-              </Button>
-            </CardContent>
+            <div>
+              <div className="text-2xl font-bold pl-5">123</div>
+              <a href="/users" className="pl-5 text-sm underline-offset-8 underline text-primary" >View All</a>
+            </div>
           </Card>
         </div>
         <div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">

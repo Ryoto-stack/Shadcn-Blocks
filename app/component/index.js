@@ -47,7 +47,7 @@ export default function BarChart() {
 
         setChartOptions({
 
-            maintainAspectRation: false,
+            maintainAspectRation: true,
             responsive: true
         })
     }, [])

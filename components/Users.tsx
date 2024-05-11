@@ -13,6 +13,8 @@ import {
   Search,
   Settings,
   ShoppingCart,
+  Square,
+  SquareGanttChart,
   Users2,
 } from "lucide-react";
 
@@ -61,12 +63,11 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 
-const menu = ["Dashboard", "Orders", "Products", "Users", "Analytics"];
+const menu = ["Dashboard", "Activity", "Assets", "Analytics"];
 const menu2 = [
   "Dashboard",
-  "Orders",
-  "Products",
-  "Users",
+  "Activity",
+  "Assets",
   "Analytics",
   "Settings",
 ];
@@ -80,7 +81,7 @@ export function Users() {
             href=""
             className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
           >
-            <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
+            <Users2 className="h-4 w-4 transition-all scale-110" />
             <span className="sr-only">Acme Inc</span>
           </Link>
           {menu.map((menu: string, index: number) => {
@@ -95,11 +96,10 @@ export function Users() {
                         className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
                       >
                         {menu === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu === "Orders" && (
-                          <ShoppingCart className="h-5 w-5" />
+                        {menu === "Activity" && (
+                          <SquareGanttChart className="h-5 w-5" />
                         )}
-                        {menu === "Products" && <Package className="h-5 w-5" />}
-                        {menu === "Users" && <Users2 className="h-5 w-5" />}
+                        {menu === "Assets" && <Package className="h-5 w-5" />}
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
@@ -157,14 +157,11 @@ export function Users() {
                         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu2 === "Orders" && (
-                          <ShoppingCart className="h-5 w-5" />
+                        {menu2 === "Activity" && (
+                          <SquareGanttChart className="h-5 w-5" />
                         )}
-                        {menu2 === "Products" && (
+                        {menu2 === "Assets" && (
                           <Package className="h-5 w-5" />
-                        )}
-                        {menu2 === "Customers" && (
-                          <Users2 className="h-5 w-5" />
                         )}
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Activity,
+  ActivityIcon,
   File,
   Home,
   LineChart,
@@ -13,6 +15,7 @@ import {
   Search,
   Settings,
   ShoppingCart,
+  SquareGanttChart,
   Users2,
 } from "lucide-react";
 
@@ -61,26 +64,25 @@ import {
   TooltipProvider,
 } from "@/components/ui/tooltip";
 
-const menu = ["Dashboard", "Orders", "Products", "Users", "Analytics"];
+const menu = ["Dashboard", "Activity", "Users", "Analytics"];
 const menu2 = [
   "Dashboard",
-  "Orders",
-  "Products",
+  "Activity",
   "Users",
   "Analytics",
   "Settings",
 ];
 
-export function Products() {
+export function Assets() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
-        <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
+      <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
           <Link
-            href="#"
+            href=""
             className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
           >
-            <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
+            <Package className="h-4 w-4 transition-all group-hover:scale-110" />
             <span className="sr-only">Acme Inc</span>
           </Link>
           {menu.map((menu: string, index: number) => {
@@ -95,10 +97,9 @@ export function Products() {
                         className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
                       >
                         {menu === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu === "Orders" && (
-                          <ShoppingCart className="h-5 w-5" />
+                        {menu === "Activity" && (
+                          <SquareGanttChart className="h-5 w-5" />
                         )}
-                        {menu === "Products" && <Package className="h-5 w-5" />}
                         {menu === "Users" && <Users2 className="h-5 w-5" />}
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
@@ -157,13 +158,10 @@ export function Products() {
                         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu2 === "Orders" && (
-                          <ShoppingCart className="h-5 w-5" />
+                        {menu2 === "Activity" && (
+                          <SquareGanttChart className="h-5 w-5" />
                         )}
-                        {menu2 === "Products" && (
-                          <Package className="h-5 w-5" />
-                        )}
-                        {menu2 === "Users" && (
+                        {menu2 === "Customers" && (
                           <Users2 className="h-5 w-5" />
                         )}
                         {menu2 === "Analytics" && (
@@ -190,7 +188,7 @@ export function Products() {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href="#">Products</Link>
+                  <Link href="#">Assets</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
