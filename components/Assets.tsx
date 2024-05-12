@@ -29,6 +29,7 @@ import {
   SquareGanttChart,
   SquareGanttChartIcon,
   Users2,
+  Users2Icon,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -185,8 +186,8 @@ export function Assets() {
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
                         {menu2 === "Assets" && <Package className="h-5 w-5" />}
-                        {menu2 === "Customers" && (
-                          <Users2 className="h-5 w-5" />
+                        {menu2 === "Users" && (
+                          <Users2Icon className="h-5 w-5" />
                         )}
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />
@@ -390,7 +391,7 @@ export function Assets() {
                           Plantronics Headphones
                         </TableCell>
                         <TableCell>
-                          <Badge variant="secondary">Spare</Badge>
+                          <Badge variant="mango">Spare</Badge>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           ASDJ23HKJD1324
@@ -429,7 +430,7 @@ export function Assets() {
                           Plantronics Headphones
                         </TableCell>
                         <TableCell>
-                          <Badge variant="secondary">Spare</Badge>
+                          <Badge variant="mango">Spare</Badge>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           SHDKKJK123123
@@ -507,7 +508,7 @@ export function Assets() {
                           DELL Monitor
                         </TableCell>
                         <TableCell>
-                          <Badge variant="secondary">Spare</Badge>
+                          <Badge variant="mango">Spare</Badge>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           ASHJKDK1234128
@@ -626,7 +627,7 @@ export function Assets() {
                           Plantronics Headphones
                         </TableCell>
                         <TableCell>
-                          <Badge variant="outline">Deployed</Badge>
+                          <Badge className="text-white-foreground">Deployed</Badge>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           KGH123GHJ

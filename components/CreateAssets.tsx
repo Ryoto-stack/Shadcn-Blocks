@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -34,6 +36,7 @@ import {
   FilePlusIcon,
   CircleUser,
   CircleUserIcon,
+  AlertCircle,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -96,17 +99,32 @@ import {
   MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { toast } from "@/components/ui/use-toast";
+
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const menu = [
   "Dashboard",
   "Assets",
   "Users",
   "Analytics",
-  "Create Assets",
-  "Create License",
-  "Create Accessories",
-  "Create Consumables",
-  "Create Component",
+  "CreateAssets",
+  "CreateLicense",
+  "CreateAccessories",
+  "CreateConsumables",
+  "CreateComponent",
   "Settings",
 ];
 const menu2 = [
@@ -114,64 +132,145 @@ const menu2 = [
   "Assets",
   "Users",
   "Analytics",
-  "Create Assets",
-  "Create License",
-  "Create Accessories",
-  "Create Consumables",
-  "Create Component",
+  "CreateLicense",
+  "CreateAccessories",
+  "CreateConsumables",
+  "CreateComponent",
   "Settings",
 ];
 
-import React from "react";
+import * as React from "react";
+import TablePage from "@/app/payment/page";
 
 export function CreateAssets() {
   return (
-    <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-        <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+    <div className="flex min-h-screen w-full flex-col bg-muted/40">
+      <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
+        <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
           <Link
             href="#"
-            className="flex items-center gap-2 text-lg font-semibold md:text-base"
+            className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
           >
-            <Package2 className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            <SquareGanttChart className="h-4 w-4 transition-all scale-110" />
           </Link>
-          <Link
-            href="#"
-            className="text-foreground transition-colors hover:text-foreground"
-          >
-            Dashboard
-          </Link>
-          <Link
-            href="/activity"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Activity
-          </Link>
-          <Link
-            href="/assets"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Assets
-          </Link>
-          <Link
-            href="/users"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Users
-          </Link>
-          <Link
-            href="/settings"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Settings
-          </Link>
+          {menu.map((menu: string, index: number) => {
+            return (
+              <div key={index}>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Link
+                        href={`/${menu.toLowerCase()}`}
+                        className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                      >
+                        {menu === "Dashboard" && <Home className="h-5 w-5" />}
+                        {menu === "Assets" && <Package className="h-5 w-5" />}
+                        {menu === "Users" && <Users2 className="h-5 w-5" />}
+                        {menu === "Analytics" && (
+                          <LineChart className="h-5 w-5" />
+                        )}
+                        {menu === "CreateAssets" && (
+                          <PackagePlus className="h-5 w-5" />
+                        )}
+                        {menu === "CreateLicense" && (
+                          <FilePlusIcon className="h-5 w-5" />
+                        )}
+                        {menu === "CreateAccessories" && (
+                          <KeyboardIcon className="h-5 w-5" />
+                        )}
+                        {menu === "CreateConsumables" && (
+                          <Droplets className="h-5 w-5" />
+                        )}
+                        {menu === "CreateComponent" && (
+                          <InboxIcon className="h-5 w-5" />
+                        )}
+                        {menu === "Settings" && (
+                          <Settings className="h-5 w-5" />
+                        )}
+                        <span className="sr-only">{menu}</span>
+                      </Link>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">{menu}</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </div>
+            );
+          })}
+        </nav>
+      </aside>
+      <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+        <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button size="icon" variant="outline" className="sm:hidden">
+                <PanelLeft className="h-5 w-5" />
+                <span className="sr-only">Toggle Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="sm:max-w-xs">
+              <nav className="grid gap-6 text-lg font-medium">
+                <Link
+                  href="#"
+                  className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
+                >
+                  <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
+                </Link>
+                {menu2.map((menu2: string, index: number) => {
+                  return (
+                    <div key={index}>
+                      <Link
+                        href={`/${menu2.toLowerCase()}`}
+                        className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                      >
+                        {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
+                        {menu2 === "Assets" && <Package className="h-5 w-5" />}
+                        {menu2 === "Users" && <Users2 className="h-5 w-5" />}
+                        {menu2 === "Analytics" && (
+                          <LineChart className="h-5 w-5" />
+                        )}
+                        {menu2 === "CreateAssets" && (
+                          <PackagePlus className="h-5 w-5" />
+                        )}
+                        {menu2 === "CreateLicense" && (
+                          <FilePlusIcon className="h-5 w-5" />
+                        )}
+                        {menu2 === "CreateAccessories" && (
+                          <KeyboardIcon className="h-5 w-5" />
+                        )}
+                        {menu2 === "CreateConsumables" && (
+                          <Droplets className="h-5 w-5" />
+                        )}
+                        {menu2 === "CreateComponent" && (
+                          <InboxIcon className="h-5 w-5" />
+                        )}
+                        {menu2 === "Settings" && (
+                          <Settings className="h-5 w-5" />
+                        )}
+                      </Link>
+                    </div>
+                  );
+                })}
+              </nav>
+            </SheetContent>
+          </Sheet>
+          <Breadcrumb className="hidden md:flex">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/dashboard">Dashboard</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Recent Activity</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
           <Menubar>
             <MenubarMenu>
-              <MenubarTrigger>Create New</MenubarTrigger>
+              <MenubarTrigger className="py-3">Create New</MenubarTrigger>
               <MenubarContent>
-                <MenubarItem>
-                  Assets
-                  </MenubarItem>
+                <MenubarItem>Assets</MenubarItem>
                 <MenubarItem>License</MenubarItem>
                 <MenubarItem>Accessories</MenubarItem>
                 <MenubarItem>Consumables</MenubarItem>
@@ -179,73 +278,28 @@ export function CreateAssets() {
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
-        </nav>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              className="shrink-0 md:hidden"
-            >
-              <menu className="h-5 w-5" />
-              <span className="sr-only">Toggle navigation menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left">
-            <nav className="grid gap-6 text-lg font-medium">
-              <Link
-                href="#"
-                className="flex items-center gap-2 text-lg font-semibold"
-              >
-                <Package2 className="h-6 w-6" />
-                <span className="sr-only">Acme Inc</span>
-              </Link>
-              <Link href="/Dashboard" className="hover:text-foreground">
-                Dashboard
-              </Link>
-              <Link
-                href="/activity"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Activity
-              </Link>
-              <Link
-                href="/assets"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Assets
-              </Link>
-              <Link
-                href="/users"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Users
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                Analytics
-              </Link>
-            </nav>
-          </SheetContent>
-        </Sheet>
-        <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
-          <form className="ml-auto flex-1 sm:flex-initial">
-            <div className="relative">
-              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Lookup assets"
-                className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
-              />
-            </div>
-          </form>
+          <div className="relative ml-auto flex-1 md:grow-0">
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Search..."
+              className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
+            />
+          </div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="secondary" size="icon" className="rounded-full">
-                <CircleUser className="h-5 w-5" />
-                <span className="sr-only">Toggle user menu</span>
+              <Button
+                variant="outline"
+                size="icon"
+                className="overflow-hidden rounded-full"
+              >
+                <Image
+                  src="/cat.png"
+                  width={36}
+                  height={36}
+                  alt="Avatar"
+                  className="overflow-hidden rounded-full"
+                />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -254,12 +308,21 @@ export function CreateAssets() {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <a href="/">Logout</a>
-              </DropdownMenuItem>
+              <DropdownMenuItem>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-        </div>
-      </header>
+        </header>
+        <main className="flex items-center justify-center flex-col py-4">
+          <Alert className="my-5">
+            <AlertCircle className="h-4 w-4" />
+            <AlertTitle>Heads up!</AlertTitle>
+            <AlertDescription>
+              You're about to create a New Assets{""}
+            </AlertDescription>
+          </Alert>
+          <TablePage/>
+        </main>
+      </div>
+    </div>
   );
 }

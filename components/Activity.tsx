@@ -205,7 +205,7 @@ export function Activity() {
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
                         {menu2 === "Assets" && <Package className="h-5 w-5" />}
-                        {menu2 === "Customers" && (
+                        {menu2 === "Users" && (
                           <Users2 className="h-5 w-5" />
                         )}
                         {menu2 === "Analytics" && (
