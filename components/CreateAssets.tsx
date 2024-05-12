@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -139,7 +137,7 @@ const menu2 = [
   "Settings",
 ];
 
-import * as React from "react";
+import React from "react";
 import TablePage from "@/app/payment/page";
 
 export function CreateAssets() {
@@ -317,7 +315,7 @@ export function CreateAssets() {
             <AlertCircle className="h-4 w-4" />
             <AlertTitle>Heads up!</AlertTitle>
             <AlertDescription>
-              You're about to create a New Assets{""}
+              Youre about to create a New Assets
             </AlertDescription>
           </Alert>
           <TablePage/>
