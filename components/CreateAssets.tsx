@@ -311,13 +311,6 @@ export function CreateAssets() {
           </DropdownMenu>
         </header>
         <main className="flex items-center justify-center flex-col py-4">
-          <Alert className="my-5">
-            <AlertCircle className="h-4 w-4" />
-            <AlertTitle>Heads up!</AlertTitle>
-            <AlertDescription>
-              Youre about to create a New Assets
-            </AlertDescription>
-          </Alert>
           <TablePage/>
         </main>
       </div>

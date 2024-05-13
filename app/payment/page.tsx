@@ -11,11 +11,12 @@ async function getUsers(): Promise<User[]> {
 
 export default async function TablePage() {
   const data = await getUsers();
+console.log(data);
 
   return (
-    <section className="py-24">
+    <section className="min-w-full ">
       <div className="container">
-        <h1 className="mb-6 text-3xl font-bold">All Users</h1>
+        <h1 className="mb-6 text-3xl font-bold">All Assets</h1>
         <DataTable columns={columns} data={data} />
       </div>
     </section>

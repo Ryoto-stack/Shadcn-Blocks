@@ -1,4 +1,4 @@
-"use client"
+  "use client"
 
 import * as React from "react"
 
@@ -69,10 +69,11 @@ export function DataTable<TData, TValue>({
         <div className="flex items-center py-4">
         <Input
           placeholder="Search by name..."
-          value={(table.getColumn('name')?.getFilterValue() as string) ?? ""}
+          value={(table.getColumn('asset')?.getFilterValue() as string) ?? ""}
           onChange={event =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("deviceimage")?.setFilterValue(event.target.value)
           }
+          
           className="max-w-sm"
         />
       </div>
