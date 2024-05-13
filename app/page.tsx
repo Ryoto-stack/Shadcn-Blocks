@@ -1,12 +1,10 @@
-import Image from "next/image";
-import {LoginForm} from "@/components/LoginForm"
+import React from 'react'
+import { SignupForm } from "@/components/SignupForm"
 
-
-export default function Home() {
+export default function SignUp() {
   return (
-    <>
-    <LoginForm/>
-    
-    </>
-  );
+    <div>
+      <SignupForm/>
+    </div>
+  )
 }
