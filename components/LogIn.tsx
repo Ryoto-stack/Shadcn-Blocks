@@ -11,33 +11,24 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export function LoginForm() {
+export function LogIn() {
   return (
     <Card className="mx-auto max-w-sm h-full">
       <CardHeader>
-        <CardTitle className="text-xl">Sign Up</CardTitle>
+        <CardTitle className="text-xl">Log In</CardTitle>
         <CardDescription>
-          Enter your information to create an account
+          Enter your information to Log In
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="first-name">First name</Label>
-              <Input id="first-name" placeholder="Max" required />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="last-name">Last name</Label>
-              <Input id="last-name" placeholder="Robinson" required />
-            </div>
-          </div>
-          <div className="grid gap-2">
+
+          <div className="grid grid-cols-1 gap-4">
             <Label htmlFor="email">Email</Label>
             <Input
               id="email"
               type="email"
-              placeholder="m@example.com"
+              placeholder="m@uas.com.ph"
               required
             />
           </div>
@@ -46,17 +37,14 @@ export function LoginForm() {
             <Input id="password" type="password" />
           </div>
           <a href="/dashboard"><Button type="submit" className="w-full py-2">
-            Create an account
+            Log in
           </Button></a>
-          <Button variant="outline" className="w-full py-2">
-            Sign up with GitHub
-          </Button>
         </div>
         <div className="mt-4 text-center text-sm">
-          Already have an account?{" "}
-          <Link href="#" className="underline">
-            Sign in
-          </Link>
+          Dont have an account yet?{" "}
+          <a href="/" className="underline">
+            Sign Up
+          </a>
         </div>
       </CardContent>
     </Card>
