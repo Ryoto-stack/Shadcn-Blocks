@@ -288,10 +288,14 @@ export function Activity() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>
+                <a href="/settings">Settings</a>
+                </DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem>
+                <a href="/">Logout</a>
+                </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>

@@ -41,19 +41,19 @@ export function Settings() {
             Dashboard
           </Link>
           <Link
-            href="/orders"
+            href="/activity"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Orders
+            Activity
           </Link>
           <Link
-            href="/products"
+            href="/assets"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Products
+            Assets
           </Link>
           <Link
-            href="#"
+            href="/users"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Users

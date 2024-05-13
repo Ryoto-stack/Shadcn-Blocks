@@ -78,7 +78,6 @@ const menu = [
   "Dashboard",
   "Assets",
   "Activity",
-  "Users",
   "Analytics",
   "Create Assets",
   "Create License",
@@ -91,7 +90,6 @@ const menu2 = [
   "Dashboard",
   "Assets",
   "Activity",
-  "Users",
   "Analytics",
   "Create Assets",
   "Create License",
@@ -127,7 +125,6 @@ export function Users() {
                         {menu === "Activity" && (
                           <SquareGanttChartIcon className="h-5 w-5" />
                         )}
-                        {menu === "Users" && <Users2 className="h-5 w-5" />}
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
@@ -187,9 +184,6 @@ export function Users() {
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
                         {menu2 === "Assets" && <Package className="h-5 w-5" />}
                         {menu2 === "Activity" && <SquareGanttChartIcon className="h-5 w-5" />}
-                        {menu2 === "Users" && (
-                          <Users2Icon className="h-5 w-5" />
-                        )}
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
@@ -261,10 +255,14 @@ export function Users() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>
+                <a href="/settings">Settings</a>
+                </DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem>
+                <a href="/">Logout</a>
+                </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>

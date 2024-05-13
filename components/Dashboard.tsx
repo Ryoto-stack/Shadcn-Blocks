@@ -107,7 +107,7 @@ export function Dashboard() {
               <MenubarTrigger>Create New</MenubarTrigger>
               <MenubarContent>
                 <MenubarItem>
-                  Assets
+                  <a href="/createassets">Assets</a>
                   </MenubarItem>
                 <MenubarItem>License</MenubarItem>
                 <MenubarItem>Accessories</MenubarItem>
@@ -281,7 +281,7 @@ export function Dashboard() {
                 </CardDescription>
               </div>
               <Button asChild size="sm" className="ml-auto gap-1">
-                <Link href="#">
+                <Link href="/activity">
                   View All
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>

@@ -35,6 +35,7 @@ import {
   CircleUser,
   CircleUserIcon,
   AlertCircle,
+  PackagePlusIcon,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -97,9 +98,6 @@ import {
   MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import {
   Form,
   FormControl,
@@ -118,7 +116,6 @@ const menu = [
   "Assets",
   "Users",
   "Analytics",
-  "CreateAssets",
   "CreateLicense",
   "CreateAccessories",
   "CreateConsumables",
@@ -149,7 +146,7 @@ export function CreateAssets() {
             href="#"
             className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
           >
-            <SquareGanttChart className="h-4 w-4 transition-all scale-110" />
+            <PackagePlusIcon className="h-4 w-4 transition-all scale-110" />
           </Link>
           {menu.map((menu: string, index: number) => {
             return (
@@ -166,9 +163,6 @@ export function CreateAssets() {
                         {menu === "Users" && <Users2 className="h-5 w-5" />}
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
-                        )}
-                        {menu === "CreateAssets" && (
-                          <PackagePlus className="h-5 w-5" />
                         )}
                         {menu === "CreateLicense" && (
                           <FilePlusIcon className="h-5 w-5" />
@@ -225,9 +219,6 @@ export function CreateAssets() {
                         {menu2 === "Users" && <Users2 className="h-5 w-5" />}
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />
-                        )}
-                        {menu2 === "CreateAssets" && (
-                          <PackagePlus className="h-5 w-5" />
                         )}
                         {menu2 === "CreateLicense" && (
                           <FilePlusIcon className="h-5 w-5" />
@@ -306,7 +297,9 @@ export function CreateAssets() {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem>
+                <a href="/">Logout</a>
+                </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
