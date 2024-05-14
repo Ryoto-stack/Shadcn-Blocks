@@ -376,6 +376,122 @@ export function Dashboard() {
               <Barchart />
             </CardContent>
           </Card>
+          <Card className="col-span-4" x-chunk="dashboard-01-chunk-4">
+            <CardHeader className="flex flex-row items-center">
+              <div className="grid gap-2">
+                <CardTitle>Assets</CardTitle>
+                <CardDescription>
+                  Recent Assets from your Inventory
+                </CardDescription>
+              </div>
+              <Button asChild size="sm" className="ml-auto gap-1">
+                <Link href="/assets">
+                  View All
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </CardHeader>
+            <CardContent>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Added By</TableHead>
+                    <TableHead>Model</TableHead>
+                    <TableHead>Status</TableHead>
+                    <TableHead>Serial</TableHead>
+                    <TableHead>Category</TableHead>
+                    <TableHead className="text-right">Submitted At</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>
+                      <div className="font-medium">Mecca Denise Dagami</div>
+                    </TableCell>
+                    <TableCell>Plantronics Headphones</TableCell>
+                    <TableCell>
+                      <Badge variant="secondary" className="text-xs">
+                        Deployed
+                      </Badge>
+                    </TableCell>
+                    <TableCell>KGH123GHJ</TableCell>
+                    <TableCell>Headphones</TableCell>
+                    <TableCell className="text-right">2023-07-12 10:42 AM</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <div className="font-medium">Orville Montero</div>
+                    </TableCell>
+                    <TableCell>Plantronic Headphones</TableCell>
+                    <TableCell>
+                      <Badge className="text-xs" variant="destructive">
+                        Spare
+                      </Badge>
+                    </TableCell>
+                    <TableCell>ASDJ23HKJD1324</TableCell>
+                    <TableCell>Headphones</TableCell>
+                    <TableCell className="text-right">2023-10-18 03:21 PM</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <div className="font-medium">Kile Santiago</div>
+                    </TableCell>
+                    <TableCell>Plantronic Headphones</TableCell>
+                    <TableCell>
+                      <Badge className="text-xs" variant="destructive">
+                        Spare
+                      </Badge>
+                    </TableCell>
+                    <TableCell>SHDKKJK123123</TableCell>
+                    <TableCell>Headphones</TableCell>
+                    <TableCell className="text-right">SHDKKJK123123</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <div className="font-medium">Kent Escala</div>
+                    </TableCell>
+                    <TableCell>Lenovo Thinkpad</TableCell>
+                    <TableCell>
+                      <Badge className="text-xs" variant="secondary">
+                        Defective
+                      </Badge>
+                    </TableCell>
+                    <TableCell>ASDKJASDKJ123567</TableCell>
+                    <TableCell>Laptop</TableCell>
+                    <TableCell className="text-right">2023-12-25 11:59 PM</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <div className="font-medium">Ash Ketchup</div>
+                    </TableCell>
+                    <TableCell>DELL Monitor</TableCell>
+                    <TableCell>
+                      <Badge className="text-xs" variant="destructive">
+                        Spare
+                      </Badge>
+                    </TableCell>
+                    <TableCell>ASHJKDK1234128</TableCell>
+                    <TableCell>Monitor</TableCell>
+                    <TableCell className="text-right">2024-01-01 12:00 AM</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <div className="font-medium">Coco Martin</div>
+                    </TableCell>
+                    <TableCell>Plantronic Headphones</TableCell>
+                    <TableCell>
+                      <Badge className="text-xs" variant="destructive">
+                        Defective
+                      </Badge>
+                    </TableCell>
+                    <TableCell>JLSDIKL123789</TableCell>
+                    <TableCell>Headphones</TableCell>
+                    <TableCell className="text-right">2024-02-14 02:14 PM</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
         </div>
       </main>
     </div>

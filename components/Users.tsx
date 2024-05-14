@@ -79,11 +79,11 @@ const menu = [
   "Assets",
   "Activity",
   "Analytics",
-  "Create Assets",
-  "Create License",
-  "Create Accessories",
-  "Create Consumables",
-  "Create Component",
+  "CreateAssets",
+  "CreateLicense",
+  "CreateAccessories",
+  "CreateConsumables",
+  "CreateComponent",
   "Settings",
 ];
 const menu2 = [
@@ -91,11 +91,11 @@ const menu2 = [
   "Assets",
   "Activity",
   "Analytics",
-  "Create Assets",
-  "Create License",
-  "Create Accessories",
-  "Create Consumables",
-  "Create Component",
+  "CreateAssets",
+  "CreateLicense",
+  "CreateAccessories",
+  "CreateConsumables",
+  "CreateComponent",
   "Settings",
 ];
 
@@ -128,19 +128,19 @@ export function Users() {
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
-                        {menu === "Create Assets" && (
+                        {menu === "CreateAssets" && (
                           <PackagePlusIcon className="h-5 w-5" />
                         )}
-                        {menu === "Create License" && (
+                        {menu === "CreateLicense" && (
                           <FilePlusIcon className="h-5 w-5" />
                         )}
-                        {menu === "Create Accessories" && (
+                        {menu === "CreateAccessories" && (
                           <KeyboardIcon className="h-5 w-5" />
                         )}
-                        {menu === "Create Consumables" && (
+                        {menu === "CreateConsumables" && (
                           <Droplets className="h-5 w-5" />
                         )}
-                        {menu === "Create Component" && (
+                        {menu === "CreateComponent" && (
                           <InboxIcon className="h-5 w-5" />
                         )}
                         {menu === "Settings" && (
@@ -187,16 +187,16 @@ export function Users() {
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
-                        {menu2 === "Create License" && (
+                        {menu2 === "CreateLicense" && (
                           <SaveIcon className="h-5 w-5" />
                         )}
-                        {menu2 === "Create Accessories" && (
+                        {menu2 === "CreateAccessories" && (
                           <KeyboardIcon className="h-5 w-5" />
                         )}
-                        {menu2 === "Create Consumables" && (
+                        {menu2 === "CreateConsumables" && (
                           <DropletsIcon className="h-5 w-5" />
                         )}
-                        {menu2 === "Create Component" && (
+                        {menu2 === "CreateComponent" && (
                           <InboxIcon className="h-5 w-5" />
                         )}
                         {menu2 === "Settings" && (
