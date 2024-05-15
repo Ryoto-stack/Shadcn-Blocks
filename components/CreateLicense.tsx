@@ -1,3 +1,7 @@
+"use client"
+
+import React from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -59,6 +63,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
 import {
   Tooltip,
   TooltipContent,
@@ -74,9 +80,16 @@ import {
   MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-
-import { Label } from "@/components/ui/label";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { Label } from "./ui/label";
+import { Calendar as CalendarIcon } from "lucide-react"
+import { format } from "date-fns"
+import { cn } from "@/lib/utils"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 
 const menu = [
   "Dashboard",
@@ -100,10 +113,34 @@ const menu2 = [
   "CreateComponent",
   "Settings",
 ];
-
-import React from "react";
-
-export function CreateAssets() {
+export function DatePickerDemo() {
+    const [date, setDate] = React.useState<Date>()
+    return (
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button
+              variant={"outline"}
+              className={cn(
+                "w-[600px] justify-start text-left font-normal py-2 pl-3",
+                !date && "text-muted-foreground"
+              )}
+            >
+              <CalendarIcon className="mr-2 h-6 w-6" />
+              {date ? format(date, "PPP") : <span>Pick a date</span>}
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-auto p-0">
+            <Calendar
+              mode="single"
+              selected={date}
+              onSelect={setDate}
+              initialFocus
+            />
+          </PopoverContent>
+        </Popover>
+      )
+}
+export default function CreateLicense() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
@@ -269,11 +306,11 @@ export function CreateAssets() {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
-        <main className="flex items-center justify-center flex-col py-4">
+        <main className="flex items-center justify-center flex-col py-4 bg-slate-100">
           <div className="flex items-center justify-center py-5">
             <div className="mx-auto grid w-[600px] gap-6">
               <div className="grid gap-2 text-center">
-                <h1 className="text-3xl font-bold">Create New Assets</h1>
+                <h1 className="text-3xl font-bold">Create New License</h1>
               </div>
               <div className="grid gap-4 flex-row">
                 <div className="grid gap-2">
@@ -327,6 +364,12 @@ export function CreateAssets() {
                     <Label htmlFor="password">Sample</Label>
                   </div>
                   <Input id="password" type="password" placeholder="...." />
+                </div>
+                <div className="grid gap-2">
+                  <div className="flex items-center">
+                    <Label>Purchase Date</Label>
+                  </div>
+                  <DatePickerDemo/>
                 </div>
                 <div className="flex items-end justify-end">
                   <a href="#">

@@ -123,6 +123,7 @@ import {
 
 import React from "react";
 
+
 export function Activity() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
