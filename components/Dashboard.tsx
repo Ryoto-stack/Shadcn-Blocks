@@ -1,25 +1,17 @@
 import Link from "next/link";
 import {
-  Activity,
   ArrowUpRight,
-  BarChart,
   Barcode,
   CircleUser,
-  CreditCard,
-  DollarSign,
   Droplets,
   FileIcon,
-  FilePlusIcon,
   Inbox,
   Keyboard,
   Menu,
   Package2,
-  Save,
   Search,
   Users,
 } from "lucide-react";
-
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -53,8 +45,6 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
