@@ -1,37 +1,32 @@
-import Image from "next/image";
-import Link from "next/link";
 import {
   ReceiptText,
   Download,
   CircleDotDashed,
   CircleX,
   CircleCheck,
-  Home,
-  LineChart,
   ListFilter,
+  MoreVertical,
   Package,
   Package2,
   PanelLeft,
   Search,
   Settings,
   SquareGanttChart,
+  Truck,
+  User2,
   Users2,
+  ActivityIcon,
   PackagePlus,
   KeyboardIcon,
+  SaveAllIcon,
+  Save,
+  Droplet,
   Droplets,
   InboxIcon,
   FilePlusIcon,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -44,12 +39,18 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+} from "@/components/ui/pagination";
+import { Progress } from "@/components/ui/progress";
+import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Table,
@@ -59,7 +60,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Tabs, TabsContent } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
@@ -97,68 +98,19 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
 import React from "react";
-
+import Nav from "./SideNav/Nav";
+import Side from "./SideNav/Side";
 
 export function Activity() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
-      <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
-        <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
-          <Link
-            href=""
-            className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
-          >
-            <SquareGanttChart className="h-4 w-4 transition-all scale-110" />
-          </Link>
-          {menu.map((menu: string, index: number) => {
-            return (
-              <div key={index}>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Link
-                        href={`/${menu.toLowerCase()}`}
-                        className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-                      >
-                        {menu === "Dashboard" && <Home className="h-5 w-5" />}
-                        {menu === "Assets" && <Package className="h-5 w-5" />}
-                        {menu === "Users" && <Users2 className="h-5 w-5" />}
-                        {menu === "Analytics" && (
-                          <LineChart className="h-5 w-5" />
-                        )}
-                        {menu === "CreateAssets" && (
-                          <PackagePlus className="h-5 w-5" />
-                        )}
-                        {menu === "CreateLicense" && (
-                          <FilePlusIcon className="h-5 w-5" />
-                        )}
-                        {menu === "CreateAccessories" && (
-                          <KeyboardIcon className="h-5 w-5" />
-                        )}
-                        {menu === "CreateConsumables" && (
-                          <Droplets className="h-5 w-5" />
-                        )}
-                        {menu === "CreateComponent" && (
-                          <InboxIcon className="h-5 w-5" />
-                        )}
-                        {menu === "Settings" && (
-                          <Settings className="h-5 w-5" />
-                        )}
-                        <span className="sr-only">{menu}</span>
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent side="right">{menu}</TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </div>
-            );
-          })}
-        </nav>
-      </aside>
+      <Nav/>
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
         <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
           <Sheet>
@@ -233,11 +185,11 @@ export function Activity() {
             <MenubarMenu>
               <MenubarTrigger className="py-3">Create New</MenubarTrigger>
               <MenubarContent>
-                <MenubarItem><a href="/createassets">Assets</a></MenubarItem>
-                <MenubarItem><a href="/createlicense">License</a></MenubarItem>
-                <MenubarItem><a href="/createaccesories">Accessories</a></MenubarItem>
-                <MenubarItem><a href="/createconsumables">Consumables</a></MenubarItem>
-                <MenubarItem><a href="/createcomponent">Component</a></MenubarItem>
+                <MenubarItem>Assets</MenubarItem>
+                <MenubarItem>License</MenubarItem>
+                <MenubarItem>Accessories</MenubarItem>
+                <MenubarItem>Consumables</MenubarItem>
+                <MenubarItem>Component</MenubarItem>
               </MenubarContent>
             </MenubarMenu>
           </Menubar>

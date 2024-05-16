@@ -1,16 +1,14 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
+<<<<<<< HEAD
   Droplets,
   DropletsIcon,
+=======
+>>>>>>> e674c7bbdbb028b774b5e3c868beb2b0397c5f20
   File,
-  FilePlusIcon,
-  Home,
-  InboxIcon,
-  KeyboardIcon,
-  LineChart,
   ListFilter,
   MoreHorizontal,
+<<<<<<< HEAD
   Package,
   Package2,
   PackageIcon,
@@ -24,17 +22,12 @@ import {
   SquareGanttChartIcon,
   Users2,
   Users2Icon,
+=======
+  PlusCircle,
+>>>>>>> e674c7bbdbb028b774b5e3c868beb2b0397c5f20
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -53,8 +46,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Table,
   TableBody,
@@ -64,6 +55,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+<<<<<<< HEAD
 import {
   Tooltip,
   TooltipContent,
@@ -78,6 +70,8 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
+=======
+>>>>>>> e674c7bbdbb028b774b5e3c868beb2b0397c5f20
 const menu = [
   "Dashboard",
   "Assets",
@@ -105,9 +99,14 @@ const menu2 = [
   "Settings",
 ];
 
+import React from "react";
+import Nav from "./SideNav/Nav";
+import Side from "./SideNav/Side";
+
 export function Assets() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
+<<<<<<< HEAD
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
         <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
           <Link
@@ -285,6 +284,11 @@ export function Assets() {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
+=======
+      <Nav/>
+      <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+        <Side/>
+>>>>>>> e674c7bbdbb028b774b5e3c868beb2b0397c5f20
         <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
           <Tabs defaultValue="all">
             <div className="flex items-center">

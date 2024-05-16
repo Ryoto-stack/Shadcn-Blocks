@@ -12,7 +12,10 @@ import {
   Search,
   Users,
 } from "lucide-react";
+<<<<<<< HEAD
 
+=======
+>>>>>>> e674c7bbdbb028b774b5e3c868beb2b0397c5f20
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -49,7 +52,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
-import Barchart from "@/app/component/index";
+import Barchart from "@/app/component/barchart";
 
 export function Dashboard() {
   return (
