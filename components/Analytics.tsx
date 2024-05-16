@@ -77,6 +77,8 @@ import {
   TooltipTrigger,
   TooltipProvider,
 } from "@/components/ui/tooltip";
+import BarChart from "@/app/component/barchart";
+import { App } from "@/app/component/pie";
 
 const menu = [
   "Dashboard",
@@ -274,7 +276,36 @@ export default function Analytics() {
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
+        <h1 className="text-3xl font-bold ml-5">Analytics</h1>
+        <main className="px-5 py-5 flex-row flex"> 
+            <Card
+              x-chunk="analytics-02-chunk-3"
+              className="flex h-[450px] w-[550px] flex-col"
+            >
+              <CardHeader>
+                <CardTitle className="flex items-center justify-center">
+                  Asset By Status
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <BarChart />
+              </CardContent>
+            </Card>
+            <Card
+              x-chunk="analytics-02-chunk-3"
+              className="flex h-[550px] w-[500px] flex-col"
+            >
+              <CardHeader>
+                <CardTitle className="flex items-center justify-center">
+                  Asset By Status
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <App />
+              </CardContent>
+            </Card>
+        </main>
       </div>
     </div>
   );
-}
+};

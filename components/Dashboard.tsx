@@ -58,7 +58,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
-import Barchart from "@/app/component/index";
+import Barchart from "@/app/component/barchart";
 
 export function Dashboard() {
   return (
