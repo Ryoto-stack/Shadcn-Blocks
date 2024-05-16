@@ -63,15 +63,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
@@ -108,7 +99,7 @@ const menu2 = [
 export default function Analytics() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
-      <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
+      <aside className="fixed inset-y-0 left-0 z-10  w-14 flex-col border-r bg-background sm:flex">
         <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
           <Link
             href=""
@@ -124,7 +115,7 @@ export default function Analytics() {
                     <TooltipTrigger asChild>
                       <Link
                         href={`/${menu.toLowerCase()}`}
-                        className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                        className="flex h-9 w-9 items-center justify-center rounded-lg  transition-colors hover:text-foreground md:h-8 md:w-8"
                       >
                         {menu === "Dashboard" && <Home className="h-5 w-5" />}
                         {menu === "Assets" && (
@@ -187,7 +178,7 @@ export default function Analytics() {
                     <div key={index}>
                       <Link
                         href={`/${menu2.toLowerCase()}`}
-                        className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                        className="flex items-center gap-4 px-2.5 hover:text-foreground"
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
                         {menu2 === "Assets" && <Package className="h-5 w-5" />}
