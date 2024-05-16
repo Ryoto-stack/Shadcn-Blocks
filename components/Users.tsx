@@ -1,43 +1,26 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
-  Droplets,
-  DropletsIcon,
   File,
-  FilePlusIcon,
-  Home,
-  InboxIcon,
-  KeyboardIcon,
-  LineChart,
   ListFilter,
-  MoreHorizontal,
+<<<<<<< HEAD
   Package,
   Package2,
   PackageIcon,
   PackagePlusIcon,
   PanelLeft,
-  PlusCircle,
-  SaveIcon,
+   SaveIcon,
   Search,
   Settings,
   SettingsIcon,
-  ShoppingCart,
-  Square,
-  SquareGanttChart,
   SquareGanttChartIcon,
   Users2,
   Users2Icon,
+=======
+>>>>>>> e674c7bbdbb028b774b5e3c868beb2b0397c5f20
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -48,16 +31,20 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
+import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Table,
   TableBody,
@@ -66,18 +53,23 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+<<<<<<< HEAD
+import { Tabs, TabsContent} from "@/components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
   TooltipProvider,
 } from "@/components/ui/tooltip";
+=======
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+>>>>>>> e674c7bbdbb028b774b5e3c868beb2b0397c5f20
 
 const menu = [
   "Dashboard",
   "Assets",
   "Activity",
+  "Users",
   "Analytics",
   "CreateAssets",
   "CreateLicense",
@@ -90,6 +82,7 @@ const menu2 = [
   "Dashboard",
   "Assets",
   "Activity",
+  "Users",
   "Analytics",
   "CreateAssets",
   "CreateLicense",
@@ -99,9 +92,13 @@ const menu2 = [
   "Settings",
 ];
 
+import Nav from "./SideNav/Nav";
+import Side from "./SideNav/Side";
+
 export function Users() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
+<<<<<<< HEAD
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
         <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
           <Link
@@ -125,6 +122,7 @@ export function Users() {
                         {menu === "Activity" && (
                           <SquareGanttChartIcon className="h-5 w-5" />
                         )}
+                        {menu === "Users" && <Users2 className="h-5 w-5" />}
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
                         )}
@@ -183,6 +181,9 @@ export function Users() {
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
                         {menu2 === "Assets" && <Package className="h-5 w-5" />}
+                        {menu2 === "Users" && (
+                          <Users2Icon className="h-5 w-5" />
+                        )}
                         {menu2 === "Activity" && <SquareGanttChartIcon className="h-5 w-5" />}
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />
@@ -228,6 +229,18 @@ export function Users() {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
+          <Menubar>
+            <MenubarMenu>
+              <MenubarTrigger className="py-3">Create New</MenubarTrigger>
+              <MenubarContent>
+                <MenubarItem><a href="/createassets">Assets</a></MenubarItem>
+                <MenubarItem><a href="/createlicense">License</a></MenubarItem>
+                <MenubarItem><a href="/createaccesories">Accessories</a></MenubarItem>
+                <MenubarItem><a href="/createconsumables">Consumables</a></MenubarItem>
+                <MenubarItem><a href="/createcomponent">Component</a></MenubarItem>
+              </MenubarContent>
+            </MenubarMenu>
+          </Menubar>
           <div className="relative ml-auto flex-1 md:grow-0">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
@@ -257,15 +270,20 @@ export function Users() {
               <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <a href="/settings">Settings</a>
-                </DropdownMenuItem>
+              </DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <a href="/">Logout</a>
-                </DropdownMenuItem>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
+=======
+      <Nav/>
+      <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+        <Side/>
+>>>>>>> e674c7bbdbb028b774b5e3c868beb2b0397c5f20
         <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
           <Tabs defaultValue="all">
             <div className="flex items-center">

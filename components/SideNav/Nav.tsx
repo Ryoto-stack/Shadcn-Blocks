@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,11 +9,11 @@ import {
   Search,
   Settings,
   Users2,
+  PackagePlus,
   KeyboardIcon,
   Droplets,
   InboxIcon,
   FilePlusIcon,
-  PackagePlusIcon,
 } from "lucide-react";
 
 import {
@@ -26,7 +25,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -36,32 +34,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  TooltipProvider,
-} from "@/components/ui/tooltip";
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-} from "@/components/ui/menubar";
-
-=======
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
->>>>>>> e674c7bbdbb028b774b5e3c868beb2b0397c5f20
-import { Label } from "@/components/ui/label";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const menu = [
   "Dashboard",
   "Assets",
   "Users",
   "Analytics",
+  "CreateAssets",
   "CreateLicense",
   "CreateAccessories",
   "CreateConsumables",
@@ -71,8 +51,10 @@ const menu = [
 const menu2 = [
   "Dashboard",
   "Assets",
+  "Activity",
   "Users",
   "Analytics",
+  "CreateAssets",
   "CreateLicense",
   "CreateAccessories",
   "CreateConsumables",
@@ -80,16 +62,20 @@ const menu2 = [
   "Settings",
 ];
 
-import React from "react";
-import Nav from "./SideNav/Nav";
-import Side from "./SideNav/Side";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
 
-export function CreateAccessories() {
+import React from "react";
+
+
+export default function Nav() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40">
-      <Nav/>
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-<<<<<<< HEAD
         <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
           <Sheet>
             <SheetTrigger asChild>
@@ -111,13 +97,21 @@ export function CreateAccessories() {
                     <div key={index}>
                       <Link
                         href={`/${menu2.toLowerCase()}`}
-                        className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                        className="flex items-center gap-4 px-2.5 hover:text-foreground"
                       >
                         {menu2 === "Dashboard" && <Home className="h-5 w-5" />}
                         {menu2 === "Assets" && <Package className="h-5 w-5" />}
-                        {menu2 === "Users" && <Users2 className="h-5 w-5" />}
+                        {menu2 === "Users" && (
+                          <Users2 className="h-5 w-5" />
+                        )}
                         {menu2 === "Analytics" && (
                           <LineChart className="h-5 w-5" />
+                        )}
+                        {menu2 === "Activity" && (
+                          <LineChart className="h-5 w-5" />
+                        )}
+                        {menu2 === "CreateAssets" && (
+                          <PackagePlus className="h-5 w-5" />
                         )}
                         {menu2 === "CreateLicense" && (
                           <FilePlusIcon className="h-5 w-5" />
@@ -150,7 +144,7 @@ export function CreateAccessories() {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Create Accessories</BreadcrumbPage>
+                <BreadcrumbPage>Recent Activity</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
@@ -158,11 +152,11 @@ export function CreateAccessories() {
             <MenubarMenu>
               <MenubarTrigger className="py-3">Create New</MenubarTrigger>
               <MenubarContent>
-                <MenubarItem><a href="/createassets">Assets</a></MenubarItem>
-                <MenubarItem><a href="/createlicense">License</a></MenubarItem>
-                <MenubarItem><a href="/createaccesories">Accessories</a></MenubarItem>
-                <MenubarItem><a href="/createconsumables">Consumables</a></MenubarItem>
-                <MenubarItem><a href="/createcomponent">Component</a></MenubarItem>
+                <MenubarItem>Assets</MenubarItem>
+                <MenubarItem>License</MenubarItem>
+                <MenubarItem>Accessories</MenubarItem>
+                <MenubarItem>Consumables</MenubarItem>
+                <MenubarItem>Component</MenubarItem>
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
@@ -193,89 +187,17 @@ export function CreateAccessories() {
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>
+                <a href="/settings">Settings</a>
+                </DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
                 <a href="/">Logout</a>
-              </DropdownMenuItem>
+                </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
-=======
-        <Side/>
->>>>>>> e674c7bbdbb028b774b5e3c868beb2b0397c5f20
-        <main className="flex items-center justify-center flex-col py-4">
-          <div className="flex items-center justify-center py-5">
-            <div className="mx-auto grid w-[600px] gap-6">
-              <div className="grid gap-2 text-center">
-                <h1 className="text-3xl font-bold">Create New Accessories</h1>
-              </div>
-              <div className="grid gap-4 flex-row">
-                <div className="grid gap-2">
-                  <Label>Example</Label>
-                  <Input id="example" type="example" placeholder="...." />
-                </div>
-                <div className="grid gap-2">
-                  <div className="flex items-center">
-                    <Label htmlFor="password">Sample</Label>
-                  </div>
-                  <Input id="password" type="password" placeholder="...." />
-                </div>
-                <div className="grid gap-2">
-                  <div className="flex items-center">
-                    <Label htmlFor="password">Sample</Label>
-                  </div>
-                  <Input id="password" type="password" placeholder="...." />
-                </div>
-                <div className="grid gap-2">
-                  <div className="flex items-center">
-                    <Label htmlFor="password">Sample</Label>
-                  </div>
-                  <Input id="password" type="password" placeholder="...." />
-                </div>
-                <div className="grid gap-2">
-                  <div className="flex items-center">
-                    <Label htmlFor="password">Sample</Label>
-                  </div>
-                  <Input id="password" type="password" placeholder="...." />
-                </div>
-                <div className="grid gap-2">
-                  <div className="flex items-center">
-                    <Label htmlFor="password">Sample</Label>
-                  </div>
-                  <Input id="password" type="password" placeholder="...." />
-                </div>
-                <div className="grid gap-2">
-                  <div className="flex items-center">
-                    <Label htmlFor="password">Sample</Label>
-                  </div>
-                  <Input id="password" type="password" placeholder="...." />
-                </div>
-                <div className="grid gap-2">
-                  <div className="flex items-center">
-                    <Label htmlFor="password">Sample</Label>
-                  </div>
-                  <Input id="password" type="password" placeholder="...." />
-                </div>
-                <div className="grid gap-2">
-                  <div className="flex items-center">
-                    <Label htmlFor="password">Sample</Label>
-                  </div>
-                  <Input id="password" type="password" placeholder="...." />
-                </div>
-                <div className="flex items-end justify-end">
-                  <a href="#">
-                    <Button type="submit" className="w-[200px] py-2 flex">
-                      Create
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-    </div>
-  );
+        </div>
+  )
 }
