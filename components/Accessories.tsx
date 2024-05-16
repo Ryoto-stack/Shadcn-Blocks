@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Activity,
+  ActivityIcon,
   Droplets,
   DropletsIcon,
   File,
@@ -10,17 +12,21 @@ import {
   KeyboardIcon,
   LineChart,
   ListFilter,
+  MailPlusIcon,
   MoreHorizontal,
   Package,
   Package2,
   PackageIcon,
   PackagePlus,
+  PackagePlusIcon,
   PanelLeft,
   PlusCircle,
   SaveIcon,
   Search,
   Settings,
   SettingsIcon,
+  ShoppingCart,
+  SquareGanttChart,
   SquareGanttChartIcon,
   Users2,
   Users2Icon,
@@ -75,6 +81,8 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
@@ -86,7 +94,7 @@ const menu = [
   "Analytics",
   "CreateAssets",
   "CreateLicense",
-  "CreateAccessories",
+  "Accessories",
   "CreateConsumables",
   "CreateComponent",
   "Settings",
@@ -99,13 +107,13 @@ const menu2 = [
   "Analytics",
   "CreateAssets",
   "CreateLicense",
-  "CreateAccessories",
+  "Accessories",
   "CreateConsumables",
   "CreateComponent",
   "Settings",
 ];
 
-export function Assets() {
+export function Accessories() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">

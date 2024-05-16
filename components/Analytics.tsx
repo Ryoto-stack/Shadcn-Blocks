@@ -7,33 +7,24 @@ import Link from "next/link";
 import {
   Droplets,
   DropletsIcon,
-  File,
   FilePlusIcon,
   Home,
   InboxIcon,
   KeyboardIcon,
   LineChart,
-  ListFilter,
-  MoreHorizontal,
   Package,
   Package2,
   PackageIcon,
   PackagePlusIcon,
   PanelLeft,
-  PlusCircle,
   SaveIcon,
   Search,
   Settings,
   SettingsIcon,
-  ShoppingCart,
-  Square,
-  SquareGanttChart,
   SquareGanttChartIcon,
-  Users2,
   Users2Icon,
 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -44,16 +35,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
@@ -62,15 +44,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,

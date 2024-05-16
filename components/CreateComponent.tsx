@@ -13,6 +13,7 @@ import {
   Search,
   Settings,
   Users2,
+  PackagePlus,
   KeyboardIcon,
   Droplets,
   InboxIcon,
@@ -53,6 +54,8 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { Label } from "./ui/label";
@@ -69,8 +72,10 @@ import {
 const menu = [
   "Dashboard",
   "Assets",
+  "Activity",
   "Users",
   "Analytics",
+  "CreateAssets",
   "CreateLicense",
   "CreateAccessories",
   "CreateConsumables",
@@ -80,8 +85,10 @@ const menu = [
 const menu2 = [
   "Dashboard",
   "Assets",
+  "Activity",
   "Users",
   "Analytics",
+  "CreateAssets",
   "CreateLicense",
   "CreateAccessories",
   "CreateConsumables",
@@ -89,33 +96,33 @@ const menu2 = [
   "Settings",
 ];
 export function DatePickerDemo() {
-    const [date, setDate] = React.useState<Date>()
-    return (
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button
-              variant={"outline"}
-              className={cn(
-                "w-[600px] justify-start text-left font-normal py-2 pl-3",
-                !date && "text-muted-foreground"
-              )}
-            >
-              <CalendarIcon className="mr-2 h-6 w-6" />
-              {date ? format(date, "PPP") : <span>Pick a date</span>}
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-auto p-0">
-            <Calendar
-              mode="single"
-              selected={date}
-              onSelect={setDate}
-              initialFocus
-            />
-          </PopoverContent>
-        </Popover>
-      )
+  const [date, setDate] = React.useState<Date>()
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          variant={"outline"}
+          className={cn(
+            "w-[600px] justify-start text-left font-normal py-2 pl-3",
+            !date && "text-muted-foreground"
+          )}
+        >
+          <CalendarIcon className="mr-2 h-6 w-6" />
+          {date ? format(date, "PPP") : <span>Pick a date</span>}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-auto p-0">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          initialFocus
+        />
+      </PopoverContent>
+    </Popover>
+  )
 }
-export default function CreateLicense() {
+export default function CreateComponent() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-muted/40">
       <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
@@ -141,6 +148,9 @@ export default function CreateLicense() {
                         {menu === "Users" && <Users2 className="h-5 w-5" />}
                         {menu === "Analytics" && (
                           <LineChart className="h-5 w-5" />
+                        )}
+                        {menu === "CreateAssets" && (
+                          <PackagePlus className="h-5 w-5" />
                         )}
                         {menu === "CreateLicense" && (
                           <FilePlusIcon className="h-5 w-5" />
@@ -285,7 +295,7 @@ export default function CreateLicense() {
           <div className="flex items-center justify-center py-5">
             <div className="mx-auto grid w-[600px] gap-6">
               <div className="grid gap-2 text-center">
-                <h1 className="text-3xl font-bold">Create New License</h1>
+                <h1 className="text-3xl font-bold">Create New Component</h1>
               </div>
               <div className="grid gap-4 flex-row">
                 <div className="grid gap-2">
@@ -344,7 +354,7 @@ export default function CreateLicense() {
                   <div className="flex items-center">
                     <Label>Purchase Date</Label>
                   </div>
-                  <DatePickerDemo/>
+                  <DatePickerDemo />
                 </div>
                 <div className="flex items-end justify-end">
                   <a href="#">

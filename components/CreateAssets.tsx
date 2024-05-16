@@ -1,40 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ChevronLeft,
-  ChevronRight,
-  Copy,
-  CreditCard,
-  ReceiptText,
-  Download,
-  CircleDotDashed,
-  CircleX,
-  CircleCheck,
   Home,
   LineChart,
-  ListFilter,
-  MoreVertical,
   Package,
   Package2,
   PanelLeft,
   Search,
   Settings,
-  SquareGanttChart,
-  Truck,
-  User2,
   Users2,
-  ActivityIcon,
-  PackagePlus,
   KeyboardIcon,
-  SaveAllIcon,
-  Save,
-  Droplet,
   Droplets,
   InboxIcon,
   FilePlusIcon,
-  CircleUser,
-  CircleUserIcon,
-  AlertCircle,
   PackagePlusIcon,
 } from "lucide-react";
 
@@ -50,7 +28,6 @@ import { Button } from "@/components/ui/button";
 
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
@@ -70,8 +47,6 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
@@ -225,11 +200,11 @@ export function CreateAssets() {
             <MenubarMenu>
               <MenubarTrigger className="py-3">Create New</MenubarTrigger>
               <MenubarContent>
-                <MenubarItem>Assets</MenubarItem>
-                <MenubarItem>License</MenubarItem>
-                <MenubarItem>Accessories</MenubarItem>
-                <MenubarItem>Consumables</MenubarItem>
-                <MenubarItem>Component</MenubarItem>
+                <MenubarItem><a href="/createassets">Assets</a></MenubarItem>
+                <MenubarItem><a href="/createlicense">License</a></MenubarItem>
+                <MenubarItem><a href="/createaccesories">Accessories</a></MenubarItem>
+                <MenubarItem><a href="/createconsumables">Consumables</a></MenubarItem>
+                <MenubarItem><a href="/createcomponent">Component</a></MenubarItem>
               </MenubarContent>
             </MenubarMenu>
           </Menubar>

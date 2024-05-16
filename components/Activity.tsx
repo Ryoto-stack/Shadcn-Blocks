@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ChevronLeft,
-  ChevronRight,
-  Copy,
-  CreditCard,
   ReceiptText,
   Download,
   CircleDotDashed,
@@ -13,22 +9,15 @@ import {
   Home,
   LineChart,
   ListFilter,
-  MoreVertical,
   Package,
   Package2,
   PanelLeft,
   Search,
   Settings,
   SquareGanttChart,
-  Truck,
-  User2,
   Users2,
-  ActivityIcon,
   PackagePlus,
   KeyboardIcon,
-  SaveAllIcon,
-  Save,
-  Droplet,
   Droplets,
   InboxIcon,
   FilePlusIcon,
@@ -48,7 +37,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -62,13 +50,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-} from "@/components/ui/pagination";
-import { Progress } from "@/components/ui/progress";
-import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Table,
@@ -78,7 +59,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
@@ -116,8 +97,6 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
@@ -254,11 +233,11 @@ export function Activity() {
             <MenubarMenu>
               <MenubarTrigger className="py-3">Create New</MenubarTrigger>
               <MenubarContent>
-                <MenubarItem>Assets</MenubarItem>
-                <MenubarItem>License</MenubarItem>
-                <MenubarItem>Accessories</MenubarItem>
-                <MenubarItem>Consumables</MenubarItem>
-                <MenubarItem>Component</MenubarItem>
+                <MenubarItem><a href="/createassets">Assets</a></MenubarItem>
+                <MenubarItem><a href="/createlicense">License</a></MenubarItem>
+                <MenubarItem><a href="/createaccesories">Accessories</a></MenubarItem>
+                <MenubarItem><a href="/createconsumables">Consumables</a></MenubarItem>
+                <MenubarItem><a href="/createcomponent">Component</a></MenubarItem>
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
